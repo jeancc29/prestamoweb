@@ -7,7 +7,7 @@ if($_GET['controller'] != "login")
     if(isset($_POST['salir']))
     {
         session_destroy();
-        header('location:' . ROOT_PATH. "login");
+        //header('location:' . ROOT_PATH. "login");
     }
 }
 
