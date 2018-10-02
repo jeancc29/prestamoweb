@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="talleres@localhost">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.4">
+    <root id="1">
+      <ServerType>standalone</ServerType>
+    </root>
+    <database id="2" parent="1" name="talleres">
+      <ObjectId>7</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <database id="4" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="7" parent="1" name="ReportServer">
+      <ObjectId>5</ObjectId>
+    </database>
+    <database id="8" parent="1" name="ReportServerTempDB">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="9" parent="1" name="dbce">
+      <ObjectId>8</ObjectId>
+    </database>
+    <database id="10" parent="1" name="pruena">
+      <ObjectId>9</ObjectId>
+    </database>
+    <database id="11" parent="1" name="dbce1">
+      <ObjectId>10</ObjectId>
+    </database>
+    <database id="12" parent="1" name="PoblacionNacional">
+      <ObjectId>11</ObjectId>
+    </database>
+    <database id="13" parent="1" name="Empresa">
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="14" parent="1" name="super">
+      <ObjectId>13</ObjectId>
+    </database>
+    <database id="15" parent="1" name="inventario_super">
+      <ObjectId>14</ObjectId>
+    </database>
+    <database id="16" parent="1" name="condominios">
+      <ObjectId>15</ObjectId>
+    </database>
+    <database id="17" parent="1" name="prueba">
+      <ObjectId>16</ObjectId>
+    </database>
+    <database id="18" parent="1" name="prestamos2">
+      <ObjectId>17</ObjectId>
+    </database>
+    <database id="19" parent="1" name="proyecto2">
+      <ObjectId>18</ObjectId>
+    </database>
+    <database id="20" parent="1" name="Sprestamos">
+      <ObjectId>19</ObjectId>
+    </database>
+    <schema id="21" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2018-04-25.16:22:54.980</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="22" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="23" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="24" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="25" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="26" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="27" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="28" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="29" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="30" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="31" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="32" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="33" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="34" parent="21" name="articulos">
+      <ObjectId>245575913</ObjectId>
+      <CreatedTimestamp>2017-04-11.15:44:02.780</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-25.08:23:51.460</ModifiedTimestamp>
+    </table>
+    <table id="35" parent="21" name="clientes">
+      <ObjectId>379148396</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:30.123</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.703</ModifiedTimestamp>
+    </table>
+    <table id="36" parent="21" name="compras">
+      <ObjectId>1845581613</ObjectId>
+      <CreatedTimestamp>2017-04-27.10:35:13.250</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:16:06.560</ModifiedTimestamp>
+    </table>
+    <table id="37" parent="21" name="detalles_compras">
+      <ObjectId>1525580473</ObjectId>
+      <CreatedTimestamp>2017-04-27.09:18:01.240</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:16:06.557</ModifiedTimestamp>
+    </table>
+    <table id="38" parent="21" name="detalles_entregas">
+      <ObjectId>1298103665</ObjectId>
+      <CreatedTimestamp>2017-05-10.12:51:10.540</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.08:30:04.623</ModifiedTimestamp>
+    </table>
+    <table id="39" parent="21" name="empleados">
+      <ObjectId>309576141</ObjectId>
+      <CreatedTimestamp>2017-04-11.15:46:57.477</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-05.09:21:12.360</ModifiedTimestamp>
+    </table>
+    <table id="40" parent="21" name="entregas">
+      <ObjectId>1618104805</ObjectId>
+      <CreatedTimestamp>2017-05-10.15:05:36.180</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:13:46.913</ModifiedTimestamp>
+    </table>
+    <table id="41" parent="21" name="proyectos">
+      <ObjectId>1205579333</ObjectId>
+      <CreatedTimestamp>2017-04-26.08:43:45.290</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:13:46.953</ModifiedTimestamp>
+    </table>
+    <table id="42" parent="21" name="rncs">
+      <ObjectId>443148624</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:30.180</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.677</ModifiedTimestamp>
+    </table>
+    <table id="43" parent="21" name="suplidores">
+      <ObjectId>277576027</ObjectId>
+      <CreatedTimestamp>2017-04-11.15:44:56.713</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.650</ModifiedTimestamp>
+    </table>
+    <table id="44" parent="21" name="sysdiagrams">
+      <ObjectId>1406628054</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:36.837</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:36.837</ModifiedTimestamp>
+    </table>
+    <table id="45" parent="21" name="terceros">
+      <ObjectId>411148510</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:30.153</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.707</ModifiedTimestamp>
+    </table>
+    <table id="46" parent="21" name="unidades">
+      <ObjectId>1938105945</ObjectId>
+      <CreatedTimestamp>2017-05-12.14:35:59.043</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.14:35:59.043</ModifiedTimestamp>
+    </table>
+    <table id="47" parent="21" name="usuarios">
+      <ObjectId>430624577</ObjectId>
+      <CreatedTimestamp>2017-05-16.11:08:54.797</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-16.11:08:54.797</ModifiedTimestamp>
+    </table>
+    <view id="48" parent="21" name="vwentregas">
+      <ObjectId>1070626857</ObjectId>
+      <CreatedTimestamp>2017-07-24.15:28:47.383</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-24.16:08:00.027</ModifiedTimestamp>
+    </view>
+    <view id="49" parent="21" name="vwentregasReportes">
+      <ObjectId>1086626914</ObjectId>
+      <CreatedTimestamp>2017-07-24.16:33:40.373</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-26.08:39:42.767</ModifiedTimestamp>
+    </view>
+    <routine id="50" parent="21" name="ActArticulos">
+      <ObjectId>18099105</ObjectId>
+      <CreatedTimestamp>2017-05-02.11:32:57.603</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-16.15:26:18.107</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="51" parent="21" name="ActCompras">
+      <ObjectId>1877581727</ObjectId>
+      <CreatedTimestamp>2017-04-27.10:36:57.783</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-27.11:50:25.710</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="52" parent="21" name="ActDetalles_compras">
+      <ObjectId>1909581841</ObjectId>
+      <CreatedTimestamp>2017-04-27.10:47:06.583</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-27.10:47:06.583</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="53" parent="21" name="ActDetalles_entregas">
+      <ObjectId>1682105033</ObjectId>
+      <CreatedTimestamp>2017-05-10.15:21:00.300</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-01.08:17:03.280</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="54" parent="21" name="ActDetalles_entregas_e_impresion">
+      <ObjectId>1698105090</ObjectId>
+      <CreatedTimestamp>2017-05-10.15:29:47.190</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-26.08:55:27.887</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="55" parent="21" name="ActEmpleados">
+      <ObjectId>658101385</ObjectId>
+      <CreatedTimestamp>2017-05-05.09:52:11.367</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-05.09:52:11.367</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="56" parent="21" name="ActEntregas">
+      <ObjectId>1650104919</ObjectId>
+      <CreatedTimestamp>2017-05-10.15:10:41.967</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-01.08:16:10.863</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="57" parent="21" name="ActProyectos">
+      <ObjectId>1237579447</ObjectId>
+      <CreatedTimestamp>2017-04-26.08:47:49.343</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-26.08:47:49.343</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="58" parent="21" name="ActSuplidores">
+      <ObjectId>354100302</ObjectId>
+      <CreatedTimestamp>2017-05-04.09:17:58.950</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-04.09:17:58.950</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="59" parent="21" name="ActUnidades">
+      <ObjectId>2002106173</ObjectId>
+      <CreatedTimestamp>2017-05-12.16:10:40.723</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-18.10:31:13.137</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="60" parent="21" name="ActUsuarios">
+      <ObjectId>462624691</ObjectId>
+      <CreatedTimestamp>2017-05-16.11:09:56.540</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-16.11:09:56.540</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="61" parent="21" name="ElimArticulos">
+      <ObjectId>901578250</ObjectId>
+      <CreatedTimestamp>2017-04-24.10:14:16.347</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-24.10:14:16.347</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="62" parent="21" name="ElimEmpleados">
+      <ObjectId>706101556</ObjectId>
+      <CreatedTimestamp>2017-05-05.09:54:46.563</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-05.09:54:46.563</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="63" parent="21" name="ElimSuplidores">
+      <ObjectId>674101442</ObjectId>
+      <CreatedTimestamp>2017-05-05.09:53:12.940</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-05.09:53:12.940</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="64" parent="21" name="ElimUnidades">
+      <ObjectId>2018106230</ObjectId>
+      <CreatedTimestamp>2017-05-12.16:24:18.723</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.16:24:18.723</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="65" parent="21" name="buscarArticulos">
+      <ObjectId>1970106059</ObjectId>
+      <CreatedTimestamp>2017-05-12.14:53:28.830</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.14:53:40.557</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="66" parent="21" name="fn_diagramobjects">
+      <ObjectId>1550628567</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.337</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.337</ModifiedTimestamp>
+      <RoutineKind>function</RoutineKind>
+      <RoutineType>scalar-fun</RoutineType>
+    </routine>
+    <routine id="67" parent="21" name="infoArticulos">
+      <ObjectId>978102525</ObjectId>
+      <CreatedTimestamp>2017-05-07.19:36:17.550</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-17.19:52:12.407</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="68" parent="21" name="pruebaArticulos">
+      <ObjectId>110623437</ObjectId>
+      <CreatedTimestamp>2017-05-14.11:41:24.753</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-14.11:41:24.753</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="69" parent="21" name="sp_alterdiagram">
+      <ObjectId>1518628453</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.290</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.290</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="70" parent="21" name="sp_articulos_actualiza">
+      <ObjectId>2030630277</ObjectId>
+      <CreatedTimestamp>2017-09-22.14:33:45.620</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.14:33:45.620</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="71" parent="21" name="sp_creatediagram">
+      <ObjectId>1486628339</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.280</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.280</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="72" parent="21" name="sp_dropdiagram">
+      <ObjectId>1534628510</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.337</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.337</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="73" parent="21" name="sp_empleados_actualiza">
+      <ObjectId>2046630334</ObjectId>
+      <CreatedTimestamp>2017-09-22.14:37:03.017</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.14:37:03.017</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="74" parent="21" name="sp_empleados_elimina">
+      <ObjectId>27147142</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:07:03.400</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:07:03.400</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="75" parent="21" name="sp_empleados_insertar">
+      <ObjectId>2062630391</ObjectId>
+      <CreatedTimestamp>2017-09-22.14:45:32.140</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.14:45:32.140</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="76" parent="21" name="sp_entregas_reimpresion">
+      <ObjectId>1710629137</ObjectId>
+      <CreatedTimestamp>2017-08-29.10:19:56.680</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-29.10:40:33.987</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="77" parent="21" name="sp_helpdiagramdefinition">
+      <ObjectId>1470628282</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.227</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.227</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="78" parent="21" name="sp_helpdiagrams">
+      <ObjectId>1454628225</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.130</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.130</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="79" parent="21" name="sp_proyectos_actualiza">
+      <ObjectId>43147199</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:11:39.663</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:11:39.663</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="80" parent="21" name="sp_proyectos_elimina">
+      <ObjectId>59147256</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:12:17.643</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:12:17.643</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="81" parent="21" name="sp_renamediagram">
+      <ObjectId>1502628396</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.287</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.287</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="82" parent="21" name="sp_suplidores_actualiza">
+      <ObjectId>2142630676</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:04:27.493</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:04:27.493</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="83" parent="21" name="sp_suplidores_elimina">
+      <ObjectId>11147085</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:05:42.197</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:05:42.197</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="84" parent="21" name="sp_unidades_actualiza">
+      <ObjectId>75147313</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:41:34.003</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:41:34.003</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="85" parent="21" name="sp_unidades_elimina">
+      <ObjectId>91147370</ObjectId>
+      <CreatedTimestamp>2017-09-22.20:42:32.520</CreatedTimestamp>
+      <ModifiedTimestamp>2017-09-22.20:42:32.520</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="86" parent="21" name="sp_upgraddiagrams">
+      <ObjectId>1390627997</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:36.720</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:36.720</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="87" parent="34" name="codArti">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="34" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="89" parent="34" name="codSupl">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="90" parent="34" name="codUnid">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="91" parent="34" name="punReo">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="92" parent="34" name="PK__material__FB140AB6062A7DEE">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codArti</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="34" name="PK__material__FB140AB6062A7DEE">
+      <ObjectId>261575970</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-11.15:44:02.867</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-11.15:44:02.867</ModifiedTimestamp>
+      <ColNames>codArti</ColNames>
+      <UnderlyingIndexName>PK__material__FB140AB6062A7DEE</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="35" name="codCliente">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="35" name="codRnc">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="96" parent="35" name="PK__clientes__39F43E92538C6F1C">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codCliente</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="97" parent="35" name="PK__clientes__39F43E92538C6F1C">
+      <ObjectId>395148453</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-25.16:22:30.130</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:30.130</ModifiedTimestamp>
+      <ColNames>codCliente</ColNames>
+      <UnderlyingIndexName>PK__clientes__39F43E92538C6F1C</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="98" parent="35" name="fk_clientes_terceros_1">
+      <ObjectId>523148909</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:39.703</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.703</ModifiedTimestamp>
+      <ColNames>codCliente</ColNames>
+      <RefTableId>411148510</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>terceros</RefTableName>
+      <RefKeyName>PK__terceros__202AEAE96268172F</RefKeyName>
+      <RefColNames>codTercero</RefColNames>
+    </foreign-key>
+    <foreign-key id="99" parent="35" name="fk_clientes_rncs_1">
+      <ObjectId>507148852</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:39.677</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.677</ModifiedTimestamp>
+      <ColNames>codRnc</ColNames>
+      <RefTableId>443148624</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>rncs</RefTableName>
+      <RefKeyName>PK__rncs__984C696A611F4170</RefKeyName>
+      <RefColNames>codRnc</RefColNames>
+    </foreign-key>
+    <column id="100" parent="36" name="fecha">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="101" parent="36" name="codSupl">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="102" parent="36" name="idMetodo">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="103" parent="36" name="numCompra">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="104" parent="36" name="PK__compras__8F844E142EBC7E16">
+      <Position>1</Position>
+      <ColNames>numCompra</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="105" parent="36" name="PK__compras__8F844E142EBC7E16">
+      <ObjectId>203147769</ObjectId>
+      <CreatedTimestamp>2018-04-25.08:30:15.857</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.08:30:15.857</ModifiedTimestamp>
+      <ColNames>numCompra</ColNames>
+      <UnderlyingIndexName>PK__compras__8F844E142EBC7E16</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="106" parent="37" name="codArti">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="107" parent="37" name="numCompra">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="37" name="precio_lote">
+      <Position>9</Position>
+      <DataType>decimal(20,2)|0</DataType>
+    </column>
+    <column id="109" parent="37" name="cantidad_lote">
+      <Position>10</Position>
+      <DataType>decimal(6,2)|0</DataType>
+    </column>
+    <column id="110" parent="37" name="unidad_lote">
+      <Position>11</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="111" parent="37" name="cantidad_unitaria">
+      <Position>12</Position>
+      <DataType>decimal(20,2)|0</DataType>
+    </column>
+    <column id="112" parent="37" name="precio_unitario">
+      <Position>13</Position>
+      <DataType>decimal(20,2)|0</DataType>
+    </column>
+    <column id="113" parent="37" name="unidad">
+      <Position>14</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <foreign-key id="114" parent="37" name="fk_compra_vs_articulos">
+      <ObjectId>1893581784</ObjectId>
+      <CreatedTimestamp>2017-04-27.10:43:31.107</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-27.10:43:31.107</ModifiedTimestamp>
+      <ColNames>codArti</ColNames>
+      <RefTableId>245575913</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>articulos</RefTableName>
+      <RefKeyName>PK__material__FB140AB6062A7DEE</RefKeyName>
+      <RefColNames>codArti</RefColNames>
+    </foreign-key>
+    <foreign-key id="115" parent="37" name="fk_detalles_compras_compras_1">
+      <ObjectId>347148282</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:16:06.557</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:16:06.557</ModifiedTimestamp>
+      <ColNames>numCompra</ColNames>
+      <RefTableId>1845581613</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>compras</RefTableName>
+      <RefKeyName>PK__compras__8F844E142EBC7E16</RefKeyName>
+      <RefColNames>numCompra</RefColNames>
+    </foreign-key>
+    <column id="116" parent="38" name="codEntr">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="117" parent="38" name="codArti">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="118" parent="38" name="cantidad">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="119" parent="38" name="precio">
+      <Position>4</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="120" parent="38" name="descripcion">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="121" parent="38" name="idUnidad">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="122" parent="39" name="codEmpl">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="123" parent="39" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="124" parent="39" name="area">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="125" parent="39" name="status">
+      <Position>4</Position>
+      <DataType>bit|0</DataType>
+    </column>
+    <index id="126" parent="39" name="PK__empleado__5131E3BD9A44B345">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codEmpl</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="127" parent="39" name="PK__empleado__5131E3BD9A44B345">
+      <ObjectId>325576198</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-11.15:46:57.507</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-11.15:46:57.507</ModifiedTimestamp>
+      <ColNames>codEmpl</ColNames>
+      <UnderlyingIndexName>PK__empleado__5131E3BD9A44B345</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="128" parent="40" name="codEntr">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="40" name="codEmpl">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="130" parent="40" name="fecha">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="131" parent="40" name="codProy">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="132" parent="40" name="codUsua">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="133" parent="40" name="status">
+      <Position>6</Position>
+      <DataType>bit|0</DataType>
+    </column>
+    <column id="134" parent="40" name="codCliente">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="135" parent="40" name="PK__entregas__C9141AFBDBE8509D">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codEntr</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="136" parent="40" name="PK__entregas__C9141AFBDBE8509D">
+      <ObjectId>1634104862</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-10.15:05:36.220</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-10.15:05:36.220</ModifiedTimestamp>
+      <ColNames>codEntr</ColNames>
+      <UnderlyingIndexName>PK__entregas__C9141AFBDBE8509D</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="137" parent="41" name="codProy">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="41" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="139" parent="41" name="status">
+      <Position>3</Position>
+      <DataType>bit|0</DataType>
+    </column>
+    <column id="140" parent="41" name="codCliente">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="141" parent="41" name="PK__proyecto__61BB110726B3567F">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codProy</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="142" parent="41" name="PK__proyecto__61BB110726B3567F">
+      <ObjectId>1221579390</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-26.08:43:45.387</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-26.08:43:45.387</ModifiedTimestamp>
+      <ColNames>codProy</ColNames>
+      <UnderlyingIndexName>PK__proyecto__61BB110726B3567F</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="143" parent="42" name="codRnc">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="42" name="rnc">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="145" parent="42" name="estado">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="146" parent="42" name="PK__rncs__984C696A611F4170">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codRnc</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="147" parent="42" name="PK__rncs__984C696A611F4170">
+      <ObjectId>459148681</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-25.16:22:30.187</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:30.187</ModifiedTimestamp>
+      <ColNames>codRnc</ColNames>
+      <UnderlyingIndexName>PK__rncs__984C696A611F4170</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="148" parent="43" name="codRnc">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="149" parent="43" name="codSuplidor">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="150" parent="43" name="PK__suplidor__62EA1F75226E3F02">
+      <Position>1</Position>
+      <ColNames>codSuplidor</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="151" parent="43" name="PK__suplidor__62EA1F75226E3F02">
+      <ObjectId>363148339</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:16:11.647</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:16:11.647</ModifiedTimestamp>
+      <ColNames>codSuplidor</ColNames>
+      <UnderlyingIndexName>PK__suplidor__62EA1F75226E3F02</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="152" parent="43" name="fk_suplidores_rncs_1">
+      <ObjectId>491148795</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:39.650</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.650</ModifiedTimestamp>
+      <ColNames>codRnc</ColNames>
+      <RefTableId>443148624</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>rncs</RefTableName>
+      <RefKeyName>PK__rncs__984C696A611F4170</RefKeyName>
+      <RefColNames>codRnc</RefColNames>
+    </foreign-key>
+    <foreign-key id="153" parent="43" name="fk_suplidores_terceros_1">
+      <ObjectId>475148738</ObjectId>
+      <CreatedTimestamp>2018-04-25.16:22:39.623</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:39.623</ModifiedTimestamp>
+      <ColNames>codSuplidor</ColNames>
+      <RefTableId>411148510</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>terceros</RefTableName>
+      <RefKeyName>PK__terceros__202AEAE96268172F</RefKeyName>
+      <RefColNames>codTercero</RefColNames>
+    </foreign-key>
+    <column id="154" parent="44" name="name">
+      <Position>1</Position>
+      <DataType>sysname|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="155" parent="44" name="principal_id">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="156" parent="44" name="diagram_id">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="157" parent="44" name="version">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="158" parent="44" name="definition">
+      <Position>5</Position>
+      <DataType>varbinary(max)|0</DataType>
+    </column>
+    <index id="159" parent="44" name="PK__sysdiagr__C2B05B61031B511F">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>diagram_id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="160" parent="44" name="UK_principal_name">
+      <Position>2</Position>
+      <ColNames>principal_id
+name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="161" parent="44" name="PK__sysdiagr__C2B05B61031B511F">
+      <ObjectId>1422628111</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-07-28.11:23:37</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37</ModifiedTimestamp>
+      <ColNames>diagram_id</ColNames>
+      <UnderlyingIndexName>PK__sysdiagr__C2B05B61031B511F</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="162" parent="44" name="UK_principal_name">
+      <ObjectId>1438628168</ObjectId>
+      <CreatedTimestamp>2017-07-28.11:23:37.050</CreatedTimestamp>
+      <ModifiedTimestamp>2017-07-28.11:23:37.050</ModifiedTimestamp>
+      <ColNames>principal_id
+name</ColNames>
+      <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
+    </key>
+    <column id="163" parent="45" name="codTercero">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="45" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <column id="165" parent="45" name="estado">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="166" parent="45" name="PK__terceros__202AEAE96268172F">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codTercero</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="167" parent="45" name="PK__terceros__202AEAE96268172F">
+      <ObjectId>427148567</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-04-25.16:22:30.157</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-25.16:22:30.157</ModifiedTimestamp>
+      <ColNames>codTercero</ColNames>
+      <UnderlyingIndexName>PK__terceros__202AEAE96268172F</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="168" parent="46" name="codUnid">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="169" parent="46" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="170" parent="46" name="status">
+      <Position>3</Position>
+      <DataType>bit|0</DataType>
+    </column>
+    <index id="171" parent="46" name="PK__unidades__4E5439C61ADEEC17">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codUnid</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="172" parent="46" name="PK__unidades__4E5439C61ADEEC17">
+      <ObjectId>1954106002</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-12.14:35:59.167</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-12.14:35:59.167</ModifiedTimestamp>
+      <ColNames>codUnid</ColNames>
+      <UnderlyingIndexName>PK__unidades__4E5439C61ADEEC17</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="173" parent="47" name="codUsua">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="174" parent="47" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="175" parent="47" name="direccion">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="176" parent="47" name="usuario">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="177" parent="47" name="pass">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="178" parent="47" name="telefono">
+      <Position>6</Position>
+      <DataType>varchar(9)|0</DataType>
+    </column>
+    <index id="179" parent="47" name="PK__usuarios__022F7E00C9EAC2BB">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>codUsua</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="180" parent="47" name="PK__usuarios__022F7E00C9EAC2BB">
+      <ObjectId>446624634</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-05-16.11:08:54.900</CreatedTimestamp>
+      <ModifiedTimestamp>2017-05-16.11:08:54.900</ModifiedTimestamp>
+      <ColNames>codUsua</ColNames>
+      <UnderlyingIndexName>PK__usuarios__022F7E00C9EAC2BB</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="181" parent="48" name="codEntr">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="182" parent="48" name="proyecto">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="183" parent="48" name="empleado">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="184" parent="48" name="articulos">
+      <Position>4</Position>
+      <DataType>nvarchar(max)|0</DataType>
+    </column>
+    <column id="185" parent="48" name="fecha">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="186" parent="49" name="codEntr">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="187" parent="49" name="proyecto">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="188" parent="49" name="codProy">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="189" parent="49" name="empleado">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="190" parent="49" name="codEmpl">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="191" parent="49" name="articulos">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="192" parent="49" name="codArti">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="193" parent="49" name="cantidad">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="194" parent="49" name="unidad">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="195" parent="49" name="fecha">
+      <Position>10</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <argument id="196" parent="50" name="@CodArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="197" parent="50" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="198" parent="50" name="@precomp">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="199" parent="50" name="@canexi">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="200" parent="50" name="@punreo">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="201" parent="50" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="202" parent="51" name="@CodSupl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="203" parent="52" name="@CodComp">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="204" parent="52" name="@CodArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="205" parent="52" name="@precio">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="206" parent="52" name="@cantidad">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="207" parent="53" name="@CodEntr">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="208" parent="53" name="@CodArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="209" parent="53" name="@precio">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="210" parent="53" name="@cantidad">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="211" parent="54" name="@CodEntr">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="212" parent="54" name="@CodArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="213" parent="54" name="@precio">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="214" parent="54" name="@cantidad">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="215" parent="55" name="@CodEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="216" parent="55" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="217" parent="55" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="218" parent="56" name="@codEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="219" parent="56" name="@codUsua">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="220" parent="56" name="@codProy">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="221" parent="57" name="@CodProy">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="222" parent="57" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="223" parent="57" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="224" parent="58" name="@CodSupl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="225" parent="58" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="226" parent="58" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="227" parent="59" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="228" parent="59" name="@descripcion">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="229" parent="59" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="230" parent="60" name="@CodUsua">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="231" parent="60" name="@nombres">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="232" parent="60" name="@direccion">
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="233" parent="60" name="@usuario">
+      <DataType>varchar(30)|0</DataType>
+    </argument>
+    <argument id="234" parent="60" name="@pass">
+      <DataType>varchar(30)|0</DataType>
+    </argument>
+    <argument id="235" parent="60" name="@telefono">
+      <DataType>varchar(9)|0</DataType>
+    </argument>
+    <argument id="236" parent="61" name="@codArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="237" parent="62" name="@codEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="238" parent="63" name="@codSupl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="239" parent="64" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="240" parent="65" name="@busqueda">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="241" parent="66">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="242" parent="67" name="@codArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="243" parent="68" name="@codArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="244" parent="69" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="245" parent="69" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="246" parent="69" name="@version">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="247" parent="69" name="@definition">
+      <DataType>varbinary(max)|0</DataType>
+    </argument>
+    <argument id="248" parent="70" name="@CodArti">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="249" parent="70" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="250" parent="70" name="@precomp">
+      <DataType>float|0</DataType>
+    </argument>
+    <argument id="251" parent="70" name="@canexi">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="252" parent="70" name="@punreo">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="253" parent="70" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="254" parent="71" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="255" parent="71" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="256" parent="71" name="@version">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="257" parent="71" name="@definition">
+      <DataType>varbinary(max)|0</DataType>
+    </argument>
+    <argument id="258" parent="72" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="259" parent="72" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="260" parent="73" name="@CodEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="261" parent="73" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="262" parent="73" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="263" parent="74" name="@CodEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="264" parent="75" name="@CodEmpl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="265" parent="75" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="266" parent="75" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="267" parent="76" name="@CodEntr">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="268" parent="77" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="269" parent="77" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="270" parent="78" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="271" parent="78" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="272" parent="79" name="@CodProy">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="273" parent="79" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="274" parent="79" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="275" parent="80" name="@CodProy">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="276" parent="80" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="277" parent="80" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="278" parent="81" name="@diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="279" parent="81" name="@owner_id">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="280" parent="81" name="@new_diagramname">
+      <DataType>sysname|0</DataType>
+    </argument>
+    <argument id="281" parent="82" name="@CodSupl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="282" parent="82" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="283" parent="82" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="284" parent="83" name="@CodSupl">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="285" parent="83" name="@descripcion">
+      <DataType>varchar(100)|0</DataType>
+    </argument>
+    <argument id="286" parent="83" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="287" parent="84" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="288" parent="84" name="@descripcion">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="289" parent="84" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+    <argument id="290" parent="85" name="@codUnid">
+      <DataType>int|0</DataType>
+    </argument>
+    <argument id="291" parent="85" name="@descripcion">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="292" parent="85" name="@status">
+      <DataType>bit|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
