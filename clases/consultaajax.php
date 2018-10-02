@@ -12,7 +12,7 @@ $serverName = "prestamoserver.database.windows.net";
 
 if(!empty($data) && $data->action == "clientes")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jean29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_clientes_obtener_por_identificacion_nombre  :datos");
   $cmd->execute(array(':datos'=>$data->datos));

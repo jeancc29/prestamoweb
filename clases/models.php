@@ -5,9 +5,9 @@ abstract class Model{
 	private $stmt;
 
 	public function __construct(){
-		$serverName = "sqlserverlogical.database.windows.net";
+		$serverName = "prestamoserver.database.windows.net";
 		//$serverName = "paginaweb1.database.windows.net";
-		$this->dbh = new PDO("sqlsrv:server=$serverName ; Database=talleres", "jeancc29", "Jean06091929");
+		$this->dbh = new PDO("sqlsrv:server=$serverName ; Database=prestamoDB", "jean29", "Jean06091929");
 	}
 
 	public function query($query){
