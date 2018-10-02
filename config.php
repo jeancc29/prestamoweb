@@ -7,7 +7,7 @@ define("DB_PASS", "jeancarlos29");
 define("DB_NAME", "shareboard");
 
 // Define URL
-define("ROOT_PATH", "/./");
+define("ROOT_PATH", "./");
 define("ROOT_URL", "https://prestamoweb.azurewebsites.net");
 
  function returnPageClass($page){
