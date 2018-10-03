@@ -34,7 +34,7 @@ class Utilidades extends Model{
     {
         if(!isset($_SESSION['codigo_usuario']))
         {
-            //header('location:' . ROOT_PATH. "login");
+              header('location:' . ROOT_PATH. "login");
         }
     }
 
