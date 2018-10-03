@@ -4,14 +4,14 @@ session_start();
 //Config
 require('config.php');
 
-echo $_GET['controller'] . " controller";
+//echo $_GET['controller'] . " controller";
 // echo $_GET['controller']. " ";
 // echo $_GET['action'] . " ";
 // echo $_GET['id'] . " ";
 
 // echo "PATH: ".ROOT_PATH;
-if($_GET['action'] == "hola")
-	header('location:https://prestamoweb.azurewebsites.net/login/');
+// if($_GET['action'] == "hola")
+// 	header('location:https://prestamoweb.azurewebsites.net/login/');
 // if($_GET['action'] == "amor")
 // 	header('location:'.ROOT_PATH ."login");
 //
@@ -51,11 +51,11 @@ require('models/prestamos.php');
 require('models/pagos.php');
 //
 
-// $bootstrap = new Bootstrap($_GET);
-// $controller = $bootstrap->createController();
-// if($controller){
-// 	$controller->executeAction();
-// }
+$bootstrap = new Bootstrap($_GET);
+$controller = $bootstrap->createController();
+if($controller){
+	$controller->executeAction();
+}
 
 
  ?>
