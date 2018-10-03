@@ -51,11 +51,11 @@ require('models/prestamos.php');
 require('models/pagos.php');
 //
 
-// $bootstrap = new Bootstrap($_GET);
-// $controller = $bootstrap->createController();
-// if($controller){
-// 	$controller->executeAction();
-// }
+$bootstrap = new Bootstrap($_GET);
+$controller = $bootstrap->createController();
+if($controller){
+	$controller->executeAction();
+}
 
 
  ?>
