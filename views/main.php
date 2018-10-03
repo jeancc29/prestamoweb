@@ -1,5 +1,5 @@
-<?php //require('header.php'); ?>
-<?php //require('sidebar.php'); ?>
+<?php require('header.php'); ?>
+<?php require('sidebar.php'); ?>
 
 
 
@@ -11,7 +11,7 @@
 
 
 <div class="">
-  <?php //require($view); ?>
+  <?php require($view); ?>
 </div>
 
 
