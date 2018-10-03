@@ -4,7 +4,7 @@ session_start();
 //Config
 require('config.php');
 
-echo $_GET['controller'] . " ";
+echo $_GET['controller'] . " controller";
 // echo $_GET['controller']. " ";
 // echo $_GET['action'] . " ";
 // echo $_GET['id'] . " ";
