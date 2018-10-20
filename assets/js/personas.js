@@ -12,14 +12,14 @@ var myApp = angular
        
 
 
-        $http.post("/prestamo/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
+        $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
             .then(function(response){
                 $scope.clientes=response.data;
                 console.log($scope.clientes);
             })
 
         $scope.buscarcliente=function(){
-            $http.post("/prestamo/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
                 .then(function(response){
                     $scope.clientes=response.data;
                     console.log($scope.clientes);
@@ -30,7 +30,7 @@ var myApp = angular
         $scope.clienteeliminar=function(codigo_usuario){
             if(confirm("Desea eliminar este cliente?"))
             {
-                $http.post("/prestamo/clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
+                $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
                     .then(function(response){
                         console.log(response.data);
                         $scope.buscarcliente();
@@ -41,7 +41,7 @@ var myApp = angular
 
         $scope.personaEditar = function(tipo_usuario, tipo_cliente){
 
-             $http.post("/prestamo/clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
+             $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
              .then(function(response){
                  $scope.optionsTipoCliente =response.data;
                  $scope.optionsTipoCliente.push({'tipo_registro': 0, 'descripcion':'Seleccionar...'});
@@ -72,7 +72,7 @@ var myApp = angular
                 }
              })
 
-            $http.post("/prestamo/clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'usuario'})
+            $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'usuario'})
              .then(function(response){
                  $scope.optionsTipoUsuario =response.data;
                 $scope.selectedTipoUsuario =  $scope.optionsTipoUsuario[0].tipo_registro;

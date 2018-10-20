@@ -40,7 +40,7 @@ var myApp = angular
 
 
         $scope.displayStud=function(){
-            $http.get("../clases/consultaajax.php")
+            $http.get("/./clases/consultaajax.php")
                 .success(function(data){
                     $scope.data=data
                 })

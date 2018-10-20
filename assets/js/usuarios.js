@@ -27,7 +27,7 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
-            $http.post("/prestamo/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -37,7 +37,7 @@ var myApp = angular
 
 
         $scope.displayStud=function(){
-            $http.get("../clases/consultaajax.php")
+            $http.get("/./clases/consultaajax.php")
                 .success(function(data){
                     $scope.data=data
                 })
