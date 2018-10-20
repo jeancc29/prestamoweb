@@ -6,14 +6,14 @@ var myApp = angular
         $scope.selectedTipoUsuario = $scope.optionsTipoUsuario[0];
 
 
-        $http.post("/prestamo/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+        $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
             .then(function(response){
                 $scope.clientes=response.data;
                 console.log($scope.clientes);
             })
 
         $scope.buscarcliente=function(){
-            $http.post("/prestamo/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
                 .then(function(response){
                     $scope.clientes=response.data;
                     console.log($scope.clientes);
@@ -24,7 +24,7 @@ var myApp = angular
         $scope.clienteeliminar=function(codigo_usuario){
             if(confirm("Desea eliminar este cliente?"))
             {
-                $http.post("/prestamo/clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
+                $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
                     .then(function(response){
                         console.log(response.data);
                         $scope.buscarcliente();
