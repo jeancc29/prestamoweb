@@ -39,7 +39,7 @@
                 <form method="post" name="prestamos" > <!--action="<?php echo ROOT_PATH . 'prestamos/nuevo'; ?>" -->
                     <div class="row">
                         <div class="form-group col-12">
-                            <label for="" class="" >Tipo interes</label>
+                            <label for="" class="" >Tipo prestamo</label>
                             <select ng-options="o.descripcion for o in optionsTipoInteres" ng-model="selectedTipoInteres"  name="tipointeres" class="form-control col-12    col-sm-12 form-control b-none">
 
 
@@ -109,7 +109,7 @@
 
                     <div class="row">
                         <div class="form-group col-6">
-                            <label for="" class="" >Tipo prestamo</label>
+                            <label for="" class="" >Tipo interes</label>
                             <!-- <select  ng-model="tipoprestamo"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
                                 <option selected value="1">Soluto directo</option>
