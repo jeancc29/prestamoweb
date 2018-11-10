@@ -27,7 +27,11 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
+<<<<<<< HEAD
             $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+=======
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -94,7 +98,11 @@ var myApp = angular
             console.log( "tipoprestamo: ",$scope.selectedTipoPrestamo.id);
             // console.log( "formapago: ",$scope.selectedFormaPago.id);
 
+<<<<<<< HEAD
             $http.post("/prestamoGitHub/clases/consultaajax.php",
+=======
+            $http.post("/./clases/consultaajax.php",
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                 {'tasa':$scope.tasa,
                     'cuotas':$scope.cuotas,
                     'interes':$scope.interes,
@@ -136,7 +144,11 @@ var myApp = angular
             // console.log( "tipoprestamo: ",$scope.tipoprestamo);
             // console.log( "formapago: ",$scope.formapago);
 
+<<<<<<< HEAD
             // $http.post("/prestamoGitHub/clases/consultaajax.php",
+=======
+            // $http.post("/./clases/consultaajax.php",
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
             //                                 {'tasa':$scope.tasa,
             //                                     'cuotas':$scope.cuotas,
             //                                     'interes':$scope.interes,
@@ -151,7 +163,11 @@ var myApp = angular
         }
 
 
+<<<<<<< HEAD
         $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+=======
+        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
             .then(function(response){
                 $scope.prestamos=response.data;
                 console.log(Date());
@@ -160,7 +176,11 @@ var myApp = angular
 
 
         $scope.buscarprestamo=function(){
+<<<<<<< HEAD
             $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+=======
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                 .then(function(response){
                     $scope.prestamos=response.data;
                     console.log($scope.data);

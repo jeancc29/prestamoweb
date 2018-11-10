@@ -201,7 +201,7 @@ if(!empty($data) && $data->action == "tipos_registros")
 {
   $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-  $cmd = $conn->prepare("select * from tipos_registros where renglon = :r");
+  $cmd = $conn->prepare("select distinct tipo_registro, * from tipos_registros where renglon = :r");
   $cmd->execute(array(':r'=>$data->renglon));
   $r  =  $cmd->fetchAll();
   echo json_encode($r);
