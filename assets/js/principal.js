@@ -27,11 +27,10 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
-<<<<<<< HEAD
-            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
-=======
+
+         
             $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
+
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);

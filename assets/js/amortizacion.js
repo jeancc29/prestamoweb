@@ -43,7 +43,7 @@ var myApp = angular
         }
 
         $scope.buscarcliente=function(){
-            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -141,7 +141,7 @@ var myApp = angular
             
            
 
-            $http.post("/prestamoGitHub/clases/consultaajax.php",
+            $http.post("/./clases/consultaajax.php",
                 {'data':$scope.datos,
                     'action':'amortizar'})
                 .then(function(data){
@@ -158,7 +158,7 @@ var myApp = angular
       
 
 
-        $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
             .then(function(response){
                 $scope.prestamos=response.data;
                 console.log(Date());
@@ -167,7 +167,7 @@ var myApp = angular
 
 
         $scope.buscarprestamo=function(){
-            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
                 .then(function(response){
                     $scope.prestamos=response.data;
                     console.log($scope.data);

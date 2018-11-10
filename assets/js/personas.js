@@ -27,7 +27,7 @@ var myApp = angular
 
           codigo_usuario = parseInt(codigo_usuario);
 
-          $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'tipos_registros_obtener_todos_json'})
+          $http.post("/./clases/consultaajax.php", {'action':'tipos_registros_obtener_todos_json'})
              .then(function(response){
                  $scope.optionsTipoUsuario =JSON.parse(response.data[0].tipo_persona);
                 $scope.selectedTipoUsuario =  $scope.optionsTipoUsuario[0];
@@ -48,7 +48,7 @@ var myApp = angular
                   if(angular.isNumber(codigo_usuario) && codigo_usuario != undefined && codigo_usuario > 0 ){
                       console.log('codigo_usuario distinto de undefined', $scope.optionsTipoSector);
 
-                      $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'personas_obtener_por_id', 'data' : codigo_usuario})
+                      $http.post("/./clases/consultaajax.php", {'action':'personas_obtener_por_id', 'data' : codigo_usuario})
                        .then(function(response){
                            
                            if(response.data[0] != undefined){
@@ -76,7 +76,7 @@ var myApp = angular
         }
 
 <<<<<<< HEAD
-        $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
+        $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
 =======
         $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
 >>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
@@ -87,7 +87,7 @@ var myApp = angular
 
         $scope.buscarcliente=function(){
 <<<<<<< HEAD
-            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
 =======
             $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
 >>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
@@ -102,7 +102,7 @@ var myApp = angular
             if(confirm("Desea eliminar este cliente?"))
             {
 <<<<<<< HEAD
-                $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
+                $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
 =======
                 $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
 >>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
@@ -117,7 +117,7 @@ var myApp = angular
         $scope.personaEditar = function(tipo_usuario, tipo_cliente){
 
 <<<<<<< HEAD
-             // $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
+             // $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
              // .then(function(response){
              //      console.log(response);
              //     $scope.optionsTipoCliente =response.data;
@@ -157,7 +157,7 @@ var myApp = angular
              //    }
              // })
 
-            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'tipos_registros_obtener_todos_json'})
+            $http.post("/./clases/consultaajax.php", {'action':'tipos_registros_obtener_todos_json'})
 =======
                     }
                 else{   
@@ -228,7 +228,7 @@ var myApp = angular
 
           console.log($scope.persona);
 
-          $http.post("/prestamoGitHub/clases/consultaajax.php",{'data':$scope.persona, 'action':'persona_actualizar'})
+          $http.post("/./clases/consultaajax.php",{'data':$scope.persona, 'action':'persona_actualizar'})
                     .then(function(response){
                         console.log(response.data);
                         if(response.data[0].errores == 0)

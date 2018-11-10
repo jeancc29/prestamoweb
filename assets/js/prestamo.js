@@ -73,7 +73,7 @@ var myApp = angular
 
 
       $scope.buscarPersona=function(){
-    		$http.post("/prestamoGitHub/clases/consultaajax.php",{'data':$scope.datosBusqueda, 'action':'persona_buscar'})
+    		$http.post("/./clases/consultaajax.php",{'data':$scope.datosBusqueda, 'action':'persona_buscar'})
     		.then(function(data){
     			$scope.data=data;
           console.log($scope.data);
@@ -217,7 +217,7 @@ var myApp = angular
 
             $scope.datosValidos = true;
 
-            $http.post("/prestamoGitHub/clases/consultaajax.php",
+            $http.post("/./clases/consultaajax.php",
                   {'data':$scope.prestamoDatos,
                   'action':'amortizar'})
                 .then(function(data){
@@ -258,7 +258,7 @@ var myApp = angular
             // console.log( "TipoInteres: ",$scope.TipoInteres);
             // console.log( "formapago: ",$scope.formapago);
 
-            // $http.post("/prestamoGitHub/clases/consultaajax.php",
+            // $http.post("/./clases/consultaajax.php",
             //                                 {'tasa':$scope.tasa,
             //                                     'cuotas':$scope.cuotas,
             //                                     'interes':$scope.interes,
@@ -273,7 +273,7 @@ var myApp = angular
         }
 
 
-       $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+       $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
             .then(function(response){
                 $scope.prestamos=response.data;
                 console.log(Date());
@@ -282,7 +282,7 @@ var myApp = angular
 
 
         $scope.buscarprestamo=function(){
-            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
                 .then(function(response){
                     $scope.prestamos=response.data;
                     console.log($scope.data);
@@ -304,7 +304,7 @@ var myApp = angular
 
                 //URL para cuando este en azure /./clases/consultaajax.php
 
-                $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'interes'})
+                $http.post("/./clases/consultaajax.php", {'action':'interes'})
                      .then(function(response){
                          $scope.optionsTipoPrestamo=response.data;
                          $scope.selectedTipoPrestamo = $scope.optionsTipoPrestamo[1];
@@ -312,7 +312,7 @@ var myApp = angular
                          console.log($scope.optionsTipoPrestamo);
                          if(angular.isNumber(id_registro) && id_registro != undefined && id_registro > 0 ){
                               
-                               $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtenerpor_id',
+                               $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtenerpor_id',
                                   'id_registro':id_registro
                                 })
                                     .then(function(response){
@@ -394,7 +394,7 @@ var myApp = angular
             $scope.prestamoDatos.formapago = $scope.selectedFormaPago.id;
 
 
-            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_guardar',
+            $http.post("/./clases/consultaajax.php", {'action':'prestamos_guardar',
               'data':$scope.prestamoDatos})
                 .then(function(response){
                     console.log(response.data);
@@ -402,7 +402,7 @@ var myApp = angular
                 })
 
 
-            // $http.post("/prestamoGitHub/clases/consultaajax.php",
+            // $http.post("/./clases/consultaajax.php",
             //                                 {'action':'prestamos_guardar',
             //                                   ':codigo_usuario':$scope.prestamoDatos.codigo_usuario,
             //                                   ':codigo_usuario_registro':codigo_usuario_registro,
@@ -447,7 +447,7 @@ var myApp = angular
 
 
 
-            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtenerpor_id',
+            $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtenerpor_id',
               'id_registro':id_registro
             })
                 .then(function(response){
