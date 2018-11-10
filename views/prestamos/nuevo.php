@@ -37,15 +37,9 @@
               <div class="box-body">
                 <form method="post" name="prestamos" > <!--action="<?php echo ROOT_PATH . 'prestamos/nuevo'; ?>" -->
                     <div class="row">
-<<<<<<< HEAD
                         <div class="form-group col-8">
                             <label for="" class="" >Tipo prestamo</label>
                             <select ng-options="o.descripcion for o in optionsTipoPrestamo" ng-model="selectedTipoPrestamo"  name="tipointeres" class="form-control col-12    col-sm-12 form-control b-none">
-=======
-                        <div class="form-group col-12">
-                            <label for="" class="" >Tipo prestamo</label>
-                            <select ng-options="o.descripcion for o in optionsTipoInteres" ng-model="selectedTipoInteres"  name="tipointeres" class="form-control col-12    col-sm-12 form-control b-none">
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
 
 
                             </select>
