@@ -5,8 +5,10 @@ abstract class Model{
 	private $stmt;
 
 	public function __construct(){
+		// $serverName = "DESKTOP-B2JEHIP";
+		// //$serverName = "prestamoserver.database.windows.net";
+		// $this->dbh = new PDO("sqlsrv:server=$serverName ; Database=prestamos2", "sa", "123");
 		$serverName = "prestamoserver.database.windows.net";
-		//$serverName = "paginaweb1.database.windows.net";
 		$this->dbh = new PDO("sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
 	}
 

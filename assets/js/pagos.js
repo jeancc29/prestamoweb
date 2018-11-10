@@ -4,17 +4,31 @@ var myApp = angular
 
 
       $scope.pagosDatos = {
-          id_registro:null,
-          codigo_cliente:null,
-          nombre_cliente:null,
-          codigo_usuario_registro:null,
-          nombre_registro:null,
-          usuario_registro:null,
-          cuota_pagada:null,
-          fechapago:null,
-          montopagado:null,
-          id_prestamo:null
+          'codigo_usuario' : null,
+            'codigo_usuario_registro' : null,
+            'capital' : 0,
+            'interes' : 0,
+            'efectivo' : 0,
+            'cheque' : 0,
+            'tarjeta' : 0,
+            'mora' : 0,
+            'paga_mora' : null,
+            'cantidad_cuotas' : null,
+            'valor_cuotas' : null,
+            'monto' : null,
+            'balance' : null,
+            'completado' : null,
+            'id_registro_afecta' : null,
+            'idAmortizacion' : null,
+            'mora_perdonada' : 0,
+            'tipo_pago' : null,
+            'amortizacion' : []
       };
+
+
+      $scope.pagos_obtener_id_prestamo = function(){
+
+      }
 
         $scope.mostrarPagosPrestamos = true;
         $scope.mostrarActive = {'prestamos':'active', 'pagos':''};
@@ -28,13 +42,15 @@ var myApp = angular
         $scope.optionsTipoPrestamo = [{name:"Soluto directo", id:1}, {name:"Insoluto", id:2}, {name:"Amortizacion", id:3}];
         $scope.selectedTipoPrestamo = $scope.optionsTipoPrestamo[0]
 
-        $http.post("/./clases/consultaajax.php",{'action':'pagos_obtener_todos'})
+        //URL para cuando este en azure /./clases/consultaajax.php
+
+        $http.post("/prestamoGitHub/clases/consultaajax.php",{'action':'pagos_obtener_todos'})
             .then(function(response){
               console.log(response.data);
                 $scope.pagosTodos=response.data;
             })
 
-        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+        $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
             .then(function(response){
                 var data = [];
                 for(var i=0; i < response.data.length; i++){
@@ -49,7 +65,7 @@ var myApp = angular
 
 
         $scope.buscarprestamo=function(datos){
-            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar'})
                 .then(function(response){var data = [];
                     for(var i=0; i < response.data.length; i++){
                         if(response.data[i].pagado == "no")
@@ -76,94 +92,106 @@ var myApp = angular
             $scope.selectedTipoPrestamo= [];
             $scope.optionsCuotas= [];
             $scope.selectedCuotas= [];
+
+             $scope.pagosDatos = {
+          'codigo_usuario' : null,
+            'codigo_usuario_registro' : null,
+            'capital' : 0,
+            'interes' : 0,
+            'efectivo' : 0,
+            'cheque' : 0,
+            'tarjeta' : 0,
+            'mora' : 0,
+            'paga_mora' : null,
+            'cantidad_cuotas' : null,
+            'valor_cuotas' : null,
+            'monto' : null,
+            'balance' : null,
+            'completado' : null,
+            'id_registro_afecta' : null,
+            'idAmortizacion' : null,
+            'mora_perdonada' : 0,
+            'tipo_pago' : null,
+            'amortizacion' : []
+      };
         }
 
 
-        $scope.verPrestamo = function(data){
+        $scope.seleccionar = function(data){
             $scope.inicializarComponentes();
-            $scope.prestamo = data;
-            $scope.codigo_usuario = data.codigo_usuario;
-            $scope.nombre = data.nombre;
+            // $scope.prestamo = data;
+            // $scope.codigo_usuario = data.codigo_usuario;
+            // $scope.nombre = data.nombre;
 
-            $scope.tasa = data.porciento_interes;
-            $scope.detalle = data.detalle;
-            $scope.selectedFormaPago = $scope.optionsFormaPago[data.formapago - 1];
-            $scope.selectedTipoPrestamo= $scope.optionsTipoPrestamo[data.tipo_registro_tipoprestamo - 1];
+            // $scope.tasa = data.porciento_interes;
+            // $scope.detalle = data.detalle;
+            // $scope.selectedFormaPago = $scope.optionsFormaPago[data.formapago - 1];
+            // $scope.selectedTipoPrestamo= $scope.optionsTipoPrestamo[data.tipo_registro_tipoprestamo - 1];
 
+           
+            console.log(data);
+            $scope.pagosDatos.codigo_usuario = data.codigo_usuario;
+            $scope.pagosDatos.nombre = data.nombre;
+            $scope.pagosDatos.id_registro_afecta = data.id_registro;
+            $scope.pagosDatos.documento = data.documento;
+            $scope.pagosDatos.porciento_interes = data.porciento_interes;
+            console.log($scope.pagosDatos);
 
-
-            $http.post("/./clases/consultaajax.php", {'action':'pagos_siguienteid'})
-                .then(function(response){
-                    $scope.numPago=response.data[0].id;
-                })
-
-            $http.post("/./clases/consultaajax.php", {'action':'pagos', 'datos' : data.id_registro})
+            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'vw_prestamos_pagos', 'datos' : data.id_registro})
                 .then(function(response){
                     var data = [];
-                    for(var i=0; i < response.data.length; i++){
-                        if(response.data[i].pagado.toLowerCase() != "pagado")
-                            data.push(response.data[i]);
-                        if(response.data[i].mora_perdonada == 1)
-                            $scope.perdonar_mora = true;
-                          console.log(response.data[i].pagado);
-
-                    }
-                    console.log(data);
-                    $scope.optionsCuotas = data;
-                    $scope.selectedCuotas = $scope.optionsCuotas[0];
-                    $scope.mora = $scope.selectedCuotas.mora;
-                    $scope.cuotasChange();
+                             $scope.pagos_consulta = response.data;
+                             console.log('pagos consulta: ', $scope.pagos_consulta);
                 })
 
 
-
-
         }
 
-
-        $scope.verPago = function(data){
-            //$scope.inicializarComponentesPagos();
-            console.log(data);
-          $scope.pagosDatos.id_registro = data.id_registro
-          $scope.pagosDatos.codigo_cliente = data.codigo_usuario;
-          $scope.pagosDatos.nombre_cliente = data.nombre;
-          $scope.pagosDatos.codigo_usuario_registro = data.codigo_usuario_registro;
-          $scope.pagosDatos.nombre_registro = data.nombre_registro;
-          $scope.pagosDatos.usuario_registro = data.usuario_registro;
-          $scope.pagosDatos.cuota_pagada = data.cantidad_cuotas;
-          $scope.pagosDatos.montopagado = data.monto;
-          $scope.pagosDatos.fechapago = data.fecha;
-          $scope.pagosDatos.id_prestamo = data.id_registro_afecta;
-
-        }
-
-        $scope.cuotasChange = function(){
-            var total = 0, subtotal = 0, interes = 0;
-            var amortizacion = [];
-            var mora = 0, mora_total = 0;
-
-            for(var i=0; i<$scope.selectedCuotas.fila; i++){
-                console.log($scope.optionsCuotas[i].mora, ' mora options');
-                // if($scope.perdonar_mora == false && $scope.optionsCuotas[i].mora != undefined)
-                //     mora = parseFloat($scope.optionsCuotas[i].mora) ;
-                // else if($scope.perdonar_mora)
-                //     mora = 0;
-
-                subtotal = subtotal + parseFloat($scope.optionsCuotas[i].cuota);
-                amortizacion.push($scope.optionsCuotas[i]);
-
-                mora_total += mora;
-
+        $scope.ckbSeleccionarCuotaChanged = function(cuota, ckbSeleccionarCuota){
+            //$scope.pagosDatos.amortizacion.push(cuota);
+            console.log($scope.pagosDatos.amortizacion);
+            if(ckbSeleccionarCuota){
+                console.log(Object.keys($scope.pagosDatos.amortizacion).lenght);
+                if(Object.keys($scope.pagosDatos.amortizacion).length > 0){
+                    console.log($scope.pagosDatos.amortizacion.find(x => x.idAmortizacion == parseInt(cuota.idAmortizacion)));
+                    if($scope.pagosDatos.amortizacion.find(x => x.idAmortizacion == parseInt(cuota.idAmortizacion)) != undefined)
+                        {
+                            alert("Error: ya existe");
+                            return;
+                        }
+                    else
+                        $scope.pagosDatos.amortizacion.push(cuota);
+                }
+                else
+                    $scope.pagosDatos.amortizacion.push(cuota);
+            }
+            else{
+                if($scope.pagosDatos.amortizacion.find(x => x.idAmortizacion == parseInt(cuota.idAmortizacion)) != undefined)
+                    {
+                        let idx = $scope.pagosDatos.amortizacion.findIndex(x => x.idAmortizacion == parseInt(cuota.idAmortizacion));
+                        $scope.pagosDatos.amortizacion.splice(idx,1);
+                    }
             }
 
-
-
-            $scope.mora = mora_total.toFixed(2);
-            $scope.subtotal = subtotal.toFixed(2);
-            $scope.monto = (subtotal + mora_total).toFixed(2);
-            $scope.amortizacion = amortizacion;
-            $scope.montopagado_keyup();
+            $scope.calcularTotal();
         }
+
+        $scope.calcularTotal = function(){
+            var monto_a_pagar = 0, capital_a_pagar = 0, interes_a_pagar = 0;
+             $scope.pagosDatos.amortizacion.forEach(function(valor, indice, array){
+                console.log('Valor:', array[indice].capital, 'indice: ', indice);
+                monto_a_pagar +=  parseFloat(array[indice].cuota);
+                capital_a_pagar += parseFloat(array[indice].capital);
+                interes_a_pagar += parseFloat(array[indice].interes);
+
+             });
+
+             $scope.pagosDatos.capital_a_pagar = capital_a_pagar;
+             $scope.pagosDatos.interes_a_pagar = interes_a_pagar;
+             $scope.pagosDatos.monto_a_pagar = monto_a_pagar;
+        }
+
+        
 
 
         $scope.montopagado_keyup = function(){
@@ -185,150 +213,18 @@ var myApp = angular
 
 
         $scope.pagar = function(){
-            var capital = 0, interes = 0, mora =0, monto = 0;
-            //console.log($scope.prestamo.id_registro);
-
-            console.log($scope.montopagado);
+            
 
 
-            if(!angular.isNumber($scope.montopagado) || $scope.montopagado <= 0){
-                alert("Error: El monto debe ser numerico, mayor que cero y no debe estar vacio");
-                return;
-            }
-            if($scope.selectedCuotas.fila > 1 && ($scope.montopagado < $scope.monto)){
-                alert("Error: si va a pagar varias cuotas, debe pagarlas todas y saldar su totalidad");
-                return;
-            }
-
-                var aa = {'documento':$scope.numPago,
-                    'codigo_usuario':$scope.prestamo.codigo_usuario,
-                    'codigo_usuario_registro':$scope.codigo_usuario_session,
-                    'capital':$scope.subtotal,
-                    'interes':$scope.interes,
-                    'mora':$scope.mora,
-                    'cantidad_cuotas':$scope.selectedCuotas.fila,
-                    'monto':$scope.monto,
-                    'balance':$scope.selectedCuotas.balance,
-                    'id_registro_afecta':$scope.prestamo.id_registro,
-                    'action':'pagos_guardar'};
-
-
-                    var monto_pagado = parseFloat($scope.montopagado) - parseFloat($scope.devuelta);
-
-
-console.log("************** desde aqui ***********");
-
-            for(var i=0; i<$scope.selectedCuotas.fila; i++){
-                console.log($scope.optionsCuotas[i].mora, ' mora options');
-                if($scope.perdonar_mora == false && $scope.optionsCuotas[i].mora != undefined)
-                    mora = mora + parseFloat($scope.optionsCuotas[i].mora) ;
-                else if($scope.perdonar_mora)
-                    mora = 0;
-                  var a = {'documento':parseFloat($scope.numPago),
-                        'codigo_usuario': parseFloat($scope.prestamo.codigo_usuario),
-                        'codigo_usuario_registro':parseFloat($scope.codigo_usuario_session),
-                        'capital':parseFloat(capital),
-                        'interes':parseFloat(interes),
-                        'mora':parseFloat(mora),
-                        'cantidad_cuotas': parseFloat($scope.optionsCuotas[i].numero_cuota),
-                        'monto':parseFloat((monto)),
-                        'balance':parseFloat($scope.optionsCuotas[i].balance),
-                        'id_registro_afecta':parseFloat($scope.prestamo.id_registro),
-                        'idAmortizacion':parseFloat($scope.optionsCuotas[i].idAmortizacion),
-                        'mora_perdonada':$scope.perdonar_mora,
-                        'action':'pagos_guardar'};
-
-                capital = parseFloat($scope.optionsCuotas[i].capital);
-                interes = parseFloat($scope.optionsCuotas[i].interes);
-                monto = parseFloat($scope.optionsCuotas[i].cuota); // + $scope.mora
-
-                if(monto_pagado < monto)
-                  monto = parseFloat(monto_pagado);
-                else if(monto_pagado === monto)
-                    monto = parseFloat(monto_pagado);
-                else
-                  monto = monto ;
-
-                monto_pagado = parseFloat(monto_pagado) - parseFloat(monto);
-
-                console.log('Pagado: ',monto, " pagar: ", monto_pagado);
-
-                $http.post("/./clases/consultaajax.php",
-                    {'documento':parseFloat($scope.numPago),
-                        'codigo_usuario': parseFloat($scope.prestamo.codigo_usuario),
-                        'codigo_usuario_registro':parseFloat($scope.codigo_usuario_session),
-                        'capital':parseFloat(capital),
-                        'interes':parseFloat(interes),
-                        'mora':parseFloat(mora),
-                        'cantidad_cuotas': parseFloat($scope.optionsCuotas[i].numero_cuota),
-                        'monto':parseFloat((monto)),
-                        'balance':parseFloat($scope.optionsCuotas[i].balance),
-                        'id_registro_afecta':parseFloat($scope.prestamo.id_registro),
-                        'idAmortizacion':parseFloat($scope.optionsCuotas[i].idAmortizacion),
-                        'mora_perdonada':$scope.perdonar_mora,
-                        'action':'pagos_guardar'})
-                    .then(function(response){
-                        console.log(response.data);
-                    })
-
-            }
-
-
-            alert("El pago se ha realizado correctamente");
-            $scope.inicializarComponentes();
-            $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'sp_pagos_guardar', 'datos' : $scope.pagosDatos})
                 .then(function(response){
                     var data = [];
-                    for(var i=0; i < response.data.length; i++){
-                        if(response.data[i].pagado == "no")
-                            data.push(response.data[i]);
-
-                    }
-                    $scope.prestamos=data;
-                    console.log(Date());
-                    console.log($scope.fechaapertura);
+                            $scope.pagosDatos.amortizacion = [];
+                             $scope.calcularTotal();
+                             $scope.pagosDatos.monto = 0;
+                             $scope.pagos_consulta = response.data;
+                             console.log('Resultado pagos: ', response.data);
                 })
-
-                $http.post("/./clases/consultaajax.php",{'action':'pagos_obtener_todos'})
-                    .then(function(response){
-                      console.log(response.data);
-                        $scope.pagosTodos=response.data;
-                    })
-            $scope.verPrestamo($scope.prestamo);
-
-
-                // $http.post("/./clases/consultaajax.php",
-                //     {'documento':$scope.numPago,
-                //         'codigo_usuario':$scope.prestamo.codigo_usuario,
-                //         'codigo_usuario_registro':$scope.codigo_usuario_session,
-                //         'capital':$scope.subtotal,
-                //         'interes':$scope.interes,
-                //         'mora':$scope.mora,
-                //         'cantidad_cuotas':$scope.selectedCuotas.fila,
-                //         'monto':$scope.monto,
-                //         'balance':$scope.selectedCuotas.balance,
-                //         'id_registro_afecta':$scope.prestamo.id_registro,
-                //         'action':'pagos_guardar'})
-                //     .then(function(response){
-                //         console.log(response.data);
-                //     })
-
-
-            // $scope.codigo_usuario = data.codigo_usuario;
-            // $scope.nombre = data.nombre;
-            //
-            // $scope.tasa = data.porciento_interes;
-            // $scope.detalle = data.detalle;
-            // $scope.selectedFormaPago = $scope.optionsFormaPago[data.formapago - 1];
-            // $scope.selectedTipoPrestamo= $scope.optionsTipoPrestamo[data.tipo_registro_tipoprestamo - 1];
-            // console.log( "interes: ",$scope.interes);
-            // console.log( "cuotas: ",$scope.cuotas);
-            // console.log( "monto: ",$scope.monto);
-            // console.log( "tipoprestamo: ",$scope.tipoprestamo);
-            // console.log( "formapago: ",$scope.formapago);
-
-
-
         }
 
         $scope.perdonar_mora_Check = function () {
@@ -348,7 +244,7 @@ console.log("************** desde aqui ***********");
 
 
         $scope.pagos_consultar = function(id_registro){
-            $http.post("/./clases/consultaajax.php", {'action':'pagos_consultar', 'datos' : id_registro})
+            $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'pagos_consultar', 'datos' : id_registro})
                 .then(function(response){
                     $scope.pagos_consulta = response.data;
                 })
@@ -356,7 +252,7 @@ console.log("************** desde aqui ***********");
 
 
         $scope.pagosMostrar = function(codigo_usuario){
-                $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_obtener_todos'})
+                $http.post("/prestamoGitHub/clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_obtener_todos'})
                     .then(function(response){
                         $scope.pagosTodos=response.data;
                         console.log($scope.pagosTodos);
@@ -365,7 +261,7 @@ console.log("************** desde aqui ***********");
 
         $scope.buscarpago=function(datos){
                    console.log(datos.target.value);
-                   $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar'})
+                   $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar'})
                        .then(function(response){
                            $scope.pagosTodos=response.data;
                        })
@@ -390,18 +286,18 @@ console.log("************** desde aqui ***********");
                $scope.eliminarPago=function(id){
                      if(confirm("Desea eliminar este cliente?"))
                      {
-                          $http.post("/./clases/consultaajax.php",{'id':id, 'action':'pagos_eliminar'})
+                          $http.post("/prestamoGitHub/clases/consultaajax.php",{'id':id, 'action':'pagos_eliminar'})
                               .then(function(response){
                                   console.log(response.data);
 
-                                  $http.post("/./clases/consultaajax.php",{'action':'pagos_obtener_todos'})
+                                  $http.post("/prestamoGitHub/clases/consultaajax.php",{'action':'pagos_obtener_todos'})
                                       .then(function(response){
                                         console.log(response.data);
                                           $scope.pagosTodos=response.data;
                                       })
 
 
-                                      $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+                                      $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
                                           .then(function(response){
                                               var data = [];
                                               for(var i=0; i < response.data.length; i++){

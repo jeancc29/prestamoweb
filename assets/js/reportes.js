@@ -3,7 +3,7 @@ var myApp = angular
     .controller("myController", function($scope,$http, $log){
 
 
-      $http.post("/./clases/consultaajax.php", {'action':'interes'})
+      $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'interes'})
              .then(function(response){
                  $scope.optionsTipoInteres=response.data;
                  $scope.optionsTipoInteres.push({'tipo_registro': '0', 'descripcion':'Seleccionar'});
@@ -12,7 +12,7 @@ var myApp = angular
              })
 
 
- $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
+ $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
              .then(function(response){
                  $scope.optionsTipoCliente =response.data;
                  $scope.optionsTipoCliente.push({'tipo_registro': 0, 'descripcion':'Seleccionar...'});
@@ -54,7 +54,7 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
-            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -62,7 +62,7 @@ var myApp = angular
 
         }
 $scope.buscarcobrador=function(){
-            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'cobrador'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'cobrador'})
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -136,7 +136,7 @@ $scope.buscarcobrador=function(){
             console.log( "tipoprestamo: ",$scope.selectedTipoPrestamo.id);
             // console.log( "formapago: ",$scope.selectedFormaPago.id);
 
-            $http.post("/./clases/consultaajax.php",
+            $http.post("/prestamoGitHub/clases/consultaajax.php",
                 {'tasa':$scope.tasa,
                     'cuotas':$scope.cuotas,
                     'interes':$scope.interes,
@@ -185,7 +185,7 @@ $scope.buscarcobrador=function(){
 
         }
 
-        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+        $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
             .then(function(response){
                 $scope.prestamos=response.data;
                 console.log(Date());
@@ -194,7 +194,7 @@ $scope.buscarcobrador=function(){
 
 
         $scope.buscarprestamo=function(){
-            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
                 .then(function(response){
                     $scope.prestamos=response.data;
                     console.log($scope.data);
@@ -245,7 +245,7 @@ console.log({
 
 
 
-            $http.post("/./clases/consultaajax.php",{
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{
                      'action':'reportes_prestamos',
                      "fechaIni" :$scope.reporteDatos.fechaIni,
                      "fechaFin" :$scope.reporteDatos.fechaFin,
@@ -284,7 +284,7 @@ console.log({
 
 
 
-                    $http.post("/./clases/consultaajax.php",{
+                    $http.post("/prestamoGitHub/clases/consultaajax.php",{
                              'action':'reportes_pagos',
                              "fechaIni" :$scope.reporteDatos.fechaIni,
                              "fechaFin" :$scope.reporteDatos.fechaFin,
@@ -303,7 +303,7 @@ console.log({
 
   $scope.reportes_ganancias=function(){
 
-                    $http.post("/./clases/consultaajax.php",{
+                    $http.post("/prestamoGitHub/clases/consultaajax.php",{
                              'action':'reportes_ganancias',
                              "fechaIni" :$scope.reporteDatos.fechaIni,
                              "fechaFin" :$scope.reporteDatos.fechaFin

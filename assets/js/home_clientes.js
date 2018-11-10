@@ -30,7 +30,7 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
-            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -97,7 +97,7 @@ var myApp = angular
             console.log( "tipoprestamo: ",$scope.selectedTipoPrestamo.id);
             // console.log( "formapago: ",$scope.selectedFormaPago.id);
 
-            $http.post("/./clases/consultaajax.php",
+            $http.post("/prestamoGitHub/clases/consultaajax.php",
                 {'tasa':$scope.tasa,
                     'cuotas':$scope.cuotas,
                     'interes':$scope.interes,
@@ -135,7 +135,7 @@ var myApp = angular
 
 
         $scope.prestamosMostrar = function(codigo_usuario){
-            $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'prestamos_codigo_usuario'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'prestamos_codigo_usuario'})
                 .then(function(response){
                     $scope.prestamosTodos=response.data;
                     console.log($scope.prestamosTodos);
@@ -143,7 +143,7 @@ var myApp = angular
         }
 
     $scope.pagosMostrar = function(codigo_usuario){
-            $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_codigo_usuario'})
+            $http.post("/prestamoGitHub/clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_codigo_usuario'})
                 .then(function(response){
                     $scope.pagosTodos=response.data;
                     console.log($scope.pagosTodos);
@@ -153,7 +153,7 @@ var myApp = angular
 
         $scope.buscarprestamo=function(datos){
             console.log(datos.target.value);
-            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
                 .then(function(response){
                     $scope.prestamosTodos=response.data;
                 })
@@ -162,7 +162,7 @@ var myApp = angular
 
  $scope.buscarpago=function(datos){
             console.log(datos.target.value);
-            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
                 .then(function(response){
                     $scope.pagosTodos=response.data;
                 })
@@ -175,7 +175,7 @@ var myApp = angular
         }
 
     $scope.clienteDatosResumen = function(codigo_usuario){
-        $http.post("/./clases/consultaajax.php",{ 'action':'clientes_datos_resumen', 'codigo_cliente':$scope.codigo_usuario})
+        $http.post("/prestamoGitHub/clases/consultaajax.php",{ 'action':'clientes_datos_resumen', 'codigo_cliente':$scope.codigo_usuario})
             .then(function(response){
                 $scope.datosResumen=response.data;
                 console.log($scope.datosResumen);

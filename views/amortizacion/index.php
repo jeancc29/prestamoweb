@@ -9,11 +9,11 @@
                     Amortizacion
                     <small>Preview</small>
                 </h1>
-                <ol class="breadcrumb">
+                <!-- <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li><a href="#">Forms</a></li>
                     <li class="active" >General Elements</li>
-                </ol>
+                </ol> -->
             </section>
 
             <!-- Main content -->
@@ -37,50 +37,84 @@
                             <div class="box-body">
                                 <form method="post" name="prestamos" action="<?php echo ROOT_PATH . 'prestamos/nuevo'; ?>">
 
-                                    <div class="row ">
-                                        <div class="form-group  col-6">
-                                            <label for="" class="" >Tasa %</label>
-                                            <input ng-model="tasa" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Tasa" name="tasa">
-                                        </div>
+                                    <div class="row">
+                                        <div class="form-group col-12">
+                                            <label for="" class="" >Tipo prestamo</label>
+                                            <!-- <select ng-model="data.tipo_interes"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
-                                        <div class="form-group col-6">
-                                            <label for="" class="" >Cuotas</label>
-                                            <input ng-model="cuotas" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Cuotas" name="cuotas" autocomplete="off">
-                                        </div>
+                                                <option selected value="1">Soluto directo</option>
+                                                <option value="2">Insoluto</option>
+                                                <option value="3">Amortizacion fija</option>
 
+                                            </select> -->
+                                            <select ng-change="tipoPrestamoChange()" ng-options="o.name for o in optionsTipoPrestamo" ng-model="selectedTipoPrestamo"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
+
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="form-group col-6">
                                             <label for="" class="" >Monto prestamo</label>
-                                            <input ng-model="monto" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto prestamo" name="monto" autocomplete="off">
+                                            <input ng-model="datos.monto_prestamo" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto prestamo" name="monto" autocomplete="off">
                                         </div>
+
                                         <div class="form-group col-6">
-                                            <label for="" class="" >Fecha apertura</label>
-                                            <input ng-model="fechaapertura" type="date" class="col-12    col-sm-12 form-control b-none" name="fecha" autocomplete="off">
+                                            <label for="" class="" >Cuotas</label>
+                                            <input ng-model="datos.cantidad_cuotas" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Cuotas" name="cuotas" autocomplete="off">
                                         </div>
+                                        
+                                        <!-- <div class="form-group col-6">
+                                            <label for="" class="" >Fecha apertura</label>
+                                            <input ng-model="datos.fecha_pago" type="date" class="col-12    col-sm-12 form-control b-none" name="fecha" autocomplete="off">
+                                        </div> -->
                                     </div>
+
+                                    <div class="row ">
+                                        <div ng-if="selectedTipoPrestamo.id == 1" class="form-group col-6">
+                                            <label for="" class="" >Valor cuotas</label>
+                                            <input ng-model="datos.valor_cuotas" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto prestamo" name="monto" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group  col-6"
+                                        ng-class="{'col-6': (selectedTipoPrestamo.id == 1), 'col-12': (selectedTipoPrestamo.id != 1)}">
+                                            <label for="" class="" >Tasa %</label>
+                                            <input ng-model="datos.porciento_interes" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Tasa" name="tasa">
+                                        </div>
+
+                                        
+
+                                    </div>
+
+                                    
 
                                     <div class="row">
                                         <div class="form-group col-6">
-                                            <label for="" class="" >Tipo prestamo</label>
-                                            <select ng-model="tipoprestamo"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
+                                            <label for="" class="" >Tipo interes</label>
+                                            <!-- <select ng-model="data.tipo_interes"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
                                                 <option selected value="1">Soluto directo</option>
                                                 <option value="2">Insoluto</option>
                                                 <option value="3">Amortizacion fija</option>
+
+                                            </select> -->
+                                            <select  ng-options="o.name for o in optionsTipoInteres" ng-model="selectedTipoInteres"   ng-model="data.tipo_interes"  name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
                                             </select>
                                         </div>
 
                                         <div class="form-group col-6">
                                             <label for="" class="" >Forma pago</label>
-                                            <select ng-model="formapago"  name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
+                                            <!-- <select ng-model="data.formapago"  name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
                                                 <option value="1">Diario</option>
                                                 <option value="2">Semanal</option>
                                                 <option value="3">Quincenal</option>
                                                 <option selected value="4">Mensual</option>
                                                 <option value="5">Anual</option>
+
+                                            </select> -->
+
+                                            <select  ng-options="o.name for o in optionsFormaPago" ng-model="selectedFormaPago"  name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
 
                                             </select>
                                         </div>
@@ -115,7 +149,9 @@
                                     <!--                    </div>-->
                                     <div class="row ">
                                         <div ng-click="estilo={display:'block'}" class="form-group col-3">
-                                            <p ng-click="amortizar()" name="amortizar" class="btn btn-primary btn-block" data-toggle="modal" data-target=".amortizacion-modal-lg">Amortizar</p>
+                                            <p  ng-click="amortizar()" name="amortizar" class="btn btn-primary btn-block" >Amortizar</p>
+
+ <!-- <input  type="submit" ng-click="amortizar()" name="amortizar" class="btn btn-primary btn-block" data-toggle="modal" data-target=".amortizacion-modal-lg"> -->
                                         </div>
                                     </div>
                                 </form>
@@ -133,9 +169,10 @@
             <!-- /.content -->
         </div>
 
+       
 
 
-        <div class="modal fade amortizacion-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div id="myModal" class="modal fade amortizacion-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">

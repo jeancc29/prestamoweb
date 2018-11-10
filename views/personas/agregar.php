@@ -23,7 +23,7 @@ $u = new Utilidades();
         <!-- Main content -->
 
 
-        <section ng-init="personaEditar('<?php echo $tipo_usuario ?>', '<?php  echo $tipo_cliente ?>')"  class="content col-10 col-sm-10  col-lg-8 ">
+        <section ng-init="load('<?php echo $_GET['id'] ?>')"  class="content col-10 col-sm-10  col-lg-8 ">
             <div class="row justify-content-center">
 
                 <div class="box " >
@@ -39,7 +39,7 @@ $u = new Utilidades();
 
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <form role="form" method="post" name="clientes" action="">
+                            <form novalidate role="form" method="post" name="clientes" action="">
                                 <!-- text input -->
                                 <div class="form-group">
                                     <label for="" class="" >Tipo persona</label>
@@ -54,65 +54,87 @@ $u = new Utilidades();
                                         ng-options="o.descripcion for o in optionsTipoUsuario"  value="selectedTipoUsuario.tipo_registro"   name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
                                             </select> -->
-                                            <select ng-change="usuarioChange()" ng-model="selectedTipoUsuario" name="tipo_usuario" 
+                                            <!-- <select ng-change="usuarioChange()" ng-model="selectedTipoUsuario" name="tipo_usuario" 
                                               class="form-control col-12    col-sm-12 form-control b-none">
                                             
                                             <option  ng-repeat="u in optionsTipoUsuario" 
-                                                       value="{{u.tipo_registro}}" >{{u.descripcion}}</option> <!-- ng-selected="u.tipo_registro == selectedTipoUsuario" -->
+                                                       value="{{u.tipo_registro}}" >{{u.descripcion}}</option> ng-selected="u.tipo_registro == selectedTipoUsuario"
 
                                                         
+                                            </select> -->
+
+
+                                             <select ng-options="o.descripcion for o in optionsTipoUsuario" ng-model="selectedTipoUsuario"  name="tipointeres" class="form-control col-12    col-sm-12 form-control b-none">
+
+
                                             </select>
                                 </div>
-                                <div class="form-group" ng-if="es_cliente">
+                                <div ng-if="selectedTipoUsuario.descripcion == 'Cliente'" class="form-group">
                                             <label for="" class="" >Tipo cliente</label>
                                             <!-- <select ng-options="o.descripcion for o in optionsTipoCliente" ng-model="selectedTipoCliente"   name="tipo_cliente" class="form-control col-12    col-sm-12 form-control b-none">
 
                                             </select> -->
-                                            <select  name="tipo_cliente" id="" class="form-control col-12    col-sm-12 form-control b-none">
+                                            <!-- <select  name="tipo_cliente" id="" class="form-control col-12    col-sm-12 form-control b-none">
                                                 <option  ng-repeat="c in optionsTipoCliente" 
                                                       ng-selected="c.tipo_registro == selectedTipoCliente" value="{{c.tipo_registro}}" >{{c.descripcion}}</option>
 
                                                         
                                                 </select>
+                                            </select> -->
+
+                                            <select ng-options="o.descripcion for o in optionsTipoCliente" ng-model="selectedTipoCliente"  name="tipointeres" class="form-control col-12    col-sm-12 form-control b-none">
+
+
                                             </select>
                                         </div>
                                 <div class="form-group">
                                     <label>Nombre</label>
-                                    <input required name="nombre" type="text" class="form-control" placeholder="Nombre completo ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['nombre'] ?>">
+                                    <input ng-model="persona.nombre" required name="nombre" type="text" class="form-control" placeholder="Nombre completo ...">
+                                    <!-- <input required name="nombre" type="text" class="form-control" placeholder="Nombre completo ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['nombre'] ?>"> -->
                                 </div>
 
                                 <div class="form-group">
                                     <label>Correo</label>
-                                    <input required name="correo" type="email" class="form-control" placeholder="Correo ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['correo'] ?>">
+                                    <input ng-model="persona.correo" name="correo" type="email" class="form-control" placeholder="Correo ..." >
+                                    <!-- <input name="correo" type="email" class="form-control" placeholder="Correo ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['correo'] ?>"> -->
                                 </div>
                                 <div class="form-group">
                                     <label>Fecha nacimiento</label>
-                                    <input required name="fecha_nacimiento" type="date" class="form-control" placeholder="Enter ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['fecha_nacimiento'] ?>">
+                                    <input ng-model="persona.fecha_nacimiento" required name="fecha_nacimiento" type="date" class="form-control" placeholder="Enter ..." >
+                                 <!--    <input required name="fecha_nacimiento" type="date" class="form-control" placeholder="Enter ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['fecha_nacimiento'] ?>"> -->
                                 </div>
 
                                 <div class="form-group">
                                     <label>Sector</label>
-                                    <select name="sector" id="" class="form-control">
+                                    <!-- <select ng-model="persona.idSector" name="sector" id="" class="form-control">
                                         <?php foreach( $u->llenar_combo_tiposregistros("ubicacion") as $cli): ?>
                                             <option value="<?php echo $cli['tipo_registro'];?>" <?php echo (!empty($viewmodel) && $cli['tipo_registro'] == $viewmodel[0]['tipo_registro_sector'])?('selected'):(''); ?>><?php echo $cli['descripcion']; ?> </option>
                                         <?php endforeach; ?>
-                                    </select>
+                                    </select> -->
+
+                                    <select ng-options="o.descripcion for o in optionsTipoSector" ng-model="selectedTipoSector"  name="tiposector" class="form-control col-12    col-sm-12 form-control b-none">
+
+
+                                            </select>
 
                                 </div>
                                 <!-- textarea -->
                                 <div class="form-group">
                                     <label>Direccion</label>
-                                    <textarea name="direccion" class="form-control" rows="3" placeholder="Enter ..."><?php if(!empty($viewmodel)) echo $viewmodel[0]['direccion'] ?></textarea>
+                                    <textarea ng-model="persona.direccion" name="direccion" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                   <!--  <textarea name="direccion" class="form-control" rows="3" placeholder="Enter ..."><?php if(!empty($viewmodel)) echo $viewmodel[0]['direccion'] ?></textarea> -->
                                 </div>
                                 <div class="form-group">
                                     <label>Identificacion</label>
-                                    <input name="identificacion" type="text" class="form-control" placeholder="Enter ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['identificacion'] ?>">
+                                    <input ng-model="persona.identificacion" name="identificacion" type="text" class="form-control" placeholder="Enter ...">
+                                <!--     <input name="identificacion" type="text" class="form-control" placeholder="Enter ..." value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['identificacion'] ?>"> -->
                                 </div>
                                 <div class="form-group">
                                     <label>Seleccionar sexo</label>
-                                    <select name="sexo" class="form-control">
-                                        <option value="Masculino">Hombre</option>
-                                        <option value="Femenino">Mujer</option>
+                                    <select ng-options="o.name for o in optionsSexo" 
+                                        ng-model="selectedSexo"  
+                                        name="tiposector" 
+                                        class="form-control col-12 col-sm-12 form-control b-none">
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -122,13 +144,16 @@ $u = new Utilidades();
                                         <div class="input-group-addon">
                                             <i class="fa fa-phone"></i>
                                         </div>
-                                        <input name="telefono" type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['telefono'] ?>">
+                                        <input ng-model="persona.telefono" name="telefono" type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                                    <!--     <input name="telefono" type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask value="<?php if(!empty($viewmodel)) echo $viewmodel[0]['telefono'] ?>"> -->
                                     </div>
                                     <!-- /.input group -->
                                 </div>
+                                <pre>{{persona}}</pre>
 
-                                <input type="submit" name="guardar" value="Guardar" class="btn btn-info pull-right">
-
+                                <!-- <input ng-click="actualizar()" type="submit" name="guardar" value="Guardar" class="btn btn-info pull-right"> -->
+                                
+                                <p ng-click="actualizar()" name="amortizar" class="btn btn-info pull-right">Guardar</p>
 
                             </form>
                         </div>
