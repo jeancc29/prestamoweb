@@ -13,7 +13,7 @@ $serverName = "prestamoserver.database.windows.net";
 
 if(!empty($data) && $data->action == "persona_actualizar")
 {
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("exec persona_actualizar  :data");
     $cmd->execute(array(
@@ -26,7 +26,7 @@ if(!empty($data) && $data->action == "persona_actualizar")
 
 if(!empty($data) && $data->action == "persona_buscar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_persona_buscar  :data");
   $cmd->execute(array(':data'=>json_encode($data->data)));
@@ -36,7 +36,7 @@ if(!empty($data) && $data->action == "persona_buscar")
 
 if(!empty($data) && $data->action == "clientes")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_clientes_obtener_por_identificacion_nombre  :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -47,7 +47,7 @@ if(!empty($data) && $data->action == "clientes")
 
 if(!empty($data) && $data->action == "cobrador")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_cobradores_obtener_por_identificacion_nombre  :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -59,7 +59,7 @@ if(!empty($data) && $data->action == "cobrador")
 
 if(!empty($data) && $data->action == "reportes_prestamos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
   $consulta = "";
@@ -98,7 +98,7 @@ if(!empty($data) && $data->action == "reportes_prestamos")
 
 if(!empty($data) && $data->action == "reportes_pagos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
   $consulta = "";
@@ -135,7 +135,7 @@ if(!empty($data) && $data->action == "reportes_pagos")
 
 if(!empty($data) && $data->action == "reportes_ganancias")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
   $consulta = "";
@@ -159,7 +159,7 @@ if(!empty($data) && $data->action == "reportes_ganancias")
 
 if(!empty($data) && $data->action == "personas")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_personas_obtener_por_identificacion_nombre  :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -169,7 +169,7 @@ if(!empty($data) && $data->action == "personas")
 
 if(!empty($data) && $data->action == "personas_obtener_por_id")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select * from usuarios where codigo_usuario = :data");
   $cmd->execute(array(':data'=>$data->data));
@@ -179,7 +179,7 @@ if(!empty($data) && $data->action == "personas_obtener_por_id")
 
 if(!empty($data) && $data->action == "interes")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select * from tipos_registros where renglon = :r");
   $cmd->execute(array(':r'=>'interes'));
@@ -189,7 +189,7 @@ if(!empty($data) && $data->action == "interes")
 
 if(!empty($data) && $data->action == "tipos_registros_obtener_todos_json")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_tiposRegistros_obtener_todos_json");
   $cmd->execute();
@@ -199,7 +199,7 @@ if(!empty($data) && $data->action == "tipos_registros_obtener_todos_json")
 
 if(!empty($data) && $data->action == "tipos_registros")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select distinct tipo_registro, * from tipos_registros where renglon = :r");
   $cmd->execute(array(':r'=>$data->renglon));
@@ -209,7 +209,7 @@ if(!empty($data) && $data->action == "tipos_registros")
 
 if(!empty($data) && $data->action == "clientes_eliminar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_clientes_eliminar :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -221,7 +221,7 @@ if(!empty($data) && $data->action == "clientes_eliminar")
 
 if(!empty($data) && $data->action == "prestamos_guardar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_prestamos_actualizar :data
                         ");
@@ -238,7 +238,7 @@ if(!empty($data) && $data->action == "prestamos_guardar")
 
 if(!empty($data) && $data->action == "pagos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select *, ROW_NUMBER() OVER(ORDER BY idAmortizacion ASC) AS fila, dbo.calcularMora((balance + capital), mora_porcentaje, fecha_pago, idAmortizacion) as mora from vw_pagos where id_prestamo = :datos and pagado != :pagado");
   $cmd->execute(array(':datos'=>$data->datos, ':pagado' => "pagado"));
@@ -248,7 +248,7 @@ if(!empty($data) && $data->action == "pagos")
 
 if(!empty($data) && $data->action == "pagos_consultar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select *, ROW_NUMBER() OVER(ORDER BY idAmortizacion ASC) AS fila, dbo.calcularMora((balance + capital), mora_porcentaje, fecha_pago, idAmortizacion) as mora from vw_pagos_consulta where id_prestamo = :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -258,7 +258,7 @@ if(!empty($data) && $data->action == "pagos_consultar")
 
 if(!empty($data) && $data->action == "sp_pagos_guardar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_guardar :datos");
   
@@ -271,7 +271,7 @@ if(!empty($data) && $data->action == "sp_pagos_guardar")
 
 if(!empty($data) && $data->action == "vw_prestamos_pagos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("select * from vw_prestamos_pagos where id_prestamo = :datos");
   $cmd->execute(array(':datos'=>$data->datos));
@@ -281,7 +281,7 @@ if(!empty($data) && $data->action == "vw_prestamos_pagos")
 
 if(!empty($data) && $data->action == "prestamos_obtener_todos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_prestamos_obtener_todos");
   $cmd->execute();
@@ -291,7 +291,7 @@ if(!empty($data) && $data->action == "prestamos_obtener_todos")
 
 if(!empty($data) && $data->action == "prestamos_codigo_usuario")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_prestamos_obtenerpor_codigo_usuario :codigo_usuario");
   $cmd->execute(array(':codigo_usuario'=>$data->codigo_usuario));
@@ -302,7 +302,7 @@ if(!empty($data) && $data->action == "prestamos_codigo_usuario")
 
 if(!empty($data) && $data->action == "prestamos_obtenerpor_id")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_prestamos_obtenerpor_id :id_registro");
   $cmd->execute(array(':id_registro'=>$data->id_registro));
@@ -312,7 +312,7 @@ if(!empty($data) && $data->action == "prestamos_obtenerpor_id")
 
 if(!empty($data) && $data->action == "pagos_codigo_usuario")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_obtenerpor_codigo_usuario :codigo_usuario");
   $cmd->execute(array(':codigo_usuario'=>$data->codigo_usuario));
@@ -323,7 +323,7 @@ if(!empty($data) && $data->action == "pagos_codigo_usuario")
 
 if(!empty($data) && $data->action == "pagos_eliminar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_eliminar @id_registro = :id");
   $cmd->execute(array(':id'=>$data->id));
@@ -333,7 +333,7 @@ if(!empty($data) && $data->action == "pagos_eliminar")
 
 if(!empty($data) && $data->action == "pagos_obtener_todos")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_obtener_todos");
   $cmd->execute();
@@ -343,7 +343,7 @@ if(!empty($data) && $data->action == "pagos_obtener_todos")
 
 if(!empty($data) && $data->action == "clientes_datos_resumen")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_clientes_datos_resumen :codigo_cliente");
   $cmd->execute(array(':codigo_cliente'=>$data->codigo_cliente));
@@ -354,7 +354,7 @@ if(!empty($data) && $data->action == "clientes_datos_resumen")
 
 if(!empty($data) && $data->action == "prestamos_buscar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_prestamos_buscar :datos");
   $cmd->execute(array(':datos' => $data->datos));
@@ -364,7 +364,7 @@ if(!empty($data) && $data->action == "prestamos_buscar")
 
 if(!empty($data) && $data->action == "pagos_buscar")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_buscar :datos");
   $cmd->execute(array(':datos' => $data->datos));
@@ -374,7 +374,7 @@ if(!empty($data) && $data->action == "pagos_buscar")
 
 if(!empty($data) && $data->action == "prestamos_buscar_para_cliente")
 {
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("exec sp_prestamos_buscar_para_cliente :datos, :codigo_cliente");
     $cmd->execute(array(':datos' => $data->datos, ':codigo_cliente' => $data->codigo_cliente));
@@ -384,7 +384,7 @@ if(!empty($data) && $data->action == "prestamos_buscar_para_cliente")
 
 if(!empty($data) && $data->action == "pagos_buscar_para_cliente")
 {
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("exec sp_pagos_buscar_para_cliente :datos, :codigo_cliente");
     $cmd->execute(array(':datos' => $data->datos, ':codigo_cliente' => $data->codigo_cliente));
@@ -394,7 +394,7 @@ if(!empty($data) && $data->action == "pagos_buscar_para_cliente")
 
 if(!empty($data) && $data->action == "pagos_siguienteid")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_siguienteid");
   $cmd->execute();
@@ -404,7 +404,7 @@ if(!empty($data) && $data->action == "pagos_siguienteid")
 
 if(!empty($data) && $data->action == "pagos_obtener_por_prestamo")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_obtener_por_prestamo @idPrestamo = :datos");
   $cmd->execute(array(":datos" => $data->datos));
@@ -414,7 +414,7 @@ if(!empty($data) && $data->action == "pagos_obtener_por_prestamo")
 
 if(!empty($data) && $data->action == "pagos_perdonar_mora")
 {
-  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   $cmd = $conn->prepare("exec sp_pagos_perdonar_mora :idAmortizacion,:mora_perdonada");
   $cmd->execute(array(":mora_perdonada" => $data->mora_perdonada, ":idAmortizacion" => $data->idAmortizacion));
@@ -424,7 +424,7 @@ if(!empty($data) && $data->action == "pagos_perdonar_mora")
 
 if(!empty($data) && $data->action == "amortizar")
 {
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("exec sp_prestamo_amortizacion  :data");
     $cmd->execute(array(
@@ -441,7 +441,7 @@ if(isset($_POST['login']))
 {
     $u = $_POST['usuario'];
     $c = $_POST['pass'];
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("exec sp_usuarios_acceder @usuario = :usuario, @clave = :clave");
     $cmd->execute(array(':usuario'=>$u, ':clave'=>$c));
@@ -455,7 +455,7 @@ if(isset($_POST['login']))
 
 if(isset($_POST['buscar_cliente'])){
     $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare("SELECT * FROM usuarios u INNER JOIN tipos_registros t ON u.tipo_registro_usuario = t.tipo_registro WHERE t.descripcion = :cliente and (u.identificacion like '%' + :datos + '%' or u.nombre  like '%' + :datos1 + '%' ) ");
     $cmd->execute(array(':cliente'=> 'Cliente', ':datos'=>$post['buscar_cliente'], ':datos1'=>$post['buscar_cliente'])); //AND u.identificacion = :datos AND u.nombre = :datos AND u.codigo_usuario = :datos
@@ -465,7 +465,7 @@ if(isset($_POST['buscar_cliente'])){
 
 if(isset($_POST['cmd'])){
     $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamos2", "jeancc29", "Jean06091929");
+    $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     $cmd = $conn->prepare($post['cmd']);
     $cmd->execute();
