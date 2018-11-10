@@ -42,15 +42,15 @@ var myApp = angular
         $scope.optionsTipoPrestamo = [{name:"Soluto directo", id:1}, {name:"Insoluto", id:2}, {name:"Amortizacion", id:3}];
         $scope.selectedTipoPrestamo = $scope.optionsTipoPrestamo[0]
 
-        //URL para cuando este en azure ../../clases/consultaajax.php
+        //URL para cuando este en azure /./clases/consultaajax.php
 
-        $http.post("../../clases/consultaajax.php",{'action':'pagos_obtener_todos'})
+        $http.post("/./clases/consultaajax.php",{'action':'pagos_obtener_todos'})
             .then(function(response){
               console.log(response.data);
                 $scope.pagosTodos=response.data;
             })
 
-        $scope.prestamos = $http.post("../../clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
             .then(function(response){
                 var data = [];
                 for(var i=0; i < response.data.length; i++){
@@ -65,7 +65,7 @@ var myApp = angular
 
 
         $scope.buscarprestamo=function(datos){
-            $http.post("../../clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar'})
+            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar'})
                 .then(function(response){var data = [];
                     for(var i=0; i < response.data.length; i++){
                         if(response.data[i].pagado == "no")
@@ -137,7 +137,7 @@ var myApp = angular
             $scope.pagosDatos.porciento_interes = data.porciento_interes;
             console.log($scope.pagosDatos);
 
-            $http.post("../../clases/consultaajax.php", {'action':'vw_prestamos_pagos', 'datos' : data.id_registro})
+            $http.post("/./clases/consultaajax.php", {'action':'vw_prestamos_pagos', 'datos' : data.id_registro})
                 .then(function(response){
                     var data = [];
                              $scope.pagos_consulta = response.data;
@@ -216,7 +216,7 @@ var myApp = angular
             
 
 
-            $http.post("../../clases/consultaajax.php", {'action':'sp_pagos_guardar', 'datos' : $scope.pagosDatos})
+            $http.post("/./clases/consultaajax.php", {'action':'sp_pagos_guardar', 'datos' : $scope.pagosDatos})
                 .then(function(response){
                     var data = [];
                             $scope.pagosDatos.amortizacion = [];
@@ -244,7 +244,7 @@ var myApp = angular
 
 
         $scope.pagos_consultar = function(id_registro){
-            $http.post("../../clases/consultaajax.php", {'action':'pagos_consultar', 'datos' : id_registro})
+            $http.post("/./clases/consultaajax.php", {'action':'pagos_consultar', 'datos' : id_registro})
                 .then(function(response){
                     $scope.pagos_consulta = response.data;
                 })
@@ -252,7 +252,7 @@ var myApp = angular
 
 
         $scope.pagosMostrar = function(codigo_usuario){
-                $http.post("../../clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_obtener_todos'})
+                $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_obtener_todos'})
                     .then(function(response){
                         $scope.pagosTodos=response.data;
                         console.log($scope.pagosTodos);
@@ -261,7 +261,7 @@ var myApp = angular
 
         $scope.buscarpago=function(datos){
                    console.log(datos.target.value);
-                   $http.post("../../clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar'})
+                   $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar'})
                        .then(function(response){
                            $scope.pagosTodos=response.data;
                        })
@@ -286,18 +286,18 @@ var myApp = angular
                $scope.eliminarPago=function(id){
                      if(confirm("Desea eliminar este cliente?"))
                      {
-                          $http.post("../../clases/consultaajax.php",{'id':id, 'action':'pagos_eliminar'})
+                          $http.post("/./clases/consultaajax.php",{'id':id, 'action':'pagos_eliminar'})
                               .then(function(response){
                                   console.log(response.data);
 
-                                  $http.post("../../clases/consultaajax.php",{'action':'pagos_obtener_todos'})
+                                  $http.post("/./clases/consultaajax.php",{'action':'pagos_obtener_todos'})
                                       .then(function(response){
                                         console.log(response.data);
                                           $scope.pagosTodos=response.data;
                                       })
 
 
-                                      $http.post("../../clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+                                      $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
                                           .then(function(response){
                                               var data = [];
                                               for(var i=0; i < response.data.length; i++){
