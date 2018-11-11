@@ -75,22 +75,14 @@ var myApp = angular
              
         }
 
-<<<<<<< HEAD
         $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
-=======
-        $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
             .then(function(response){
                 $scope.clientes=response.data;
                 console.log($scope.clientes);
             })
 
         $scope.buscarcliente=function(){
-<<<<<<< HEAD
             $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
-=======
-            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'personas'})
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                 .then(function(response){
                     $scope.clientes=response.data;
                     console.log($scope.clientes);
@@ -101,11 +93,7 @@ var myApp = angular
         $scope.clienteeliminar=function(codigo_usuario){
             if(confirm("Desea eliminar este cliente?"))
             {
-<<<<<<< HEAD
                 $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
-=======
-                $http.post("/./clases/consultaajax.php",{'datos':codigo_usuario, 'action':'clientes_eliminar'})
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                     .then(function(response){
                         console.log(response.data);
                         $scope.buscarcliente();
@@ -116,20 +104,12 @@ var myApp = angular
 
         $scope.personaEditar = function(tipo_usuario, tipo_cliente){
 
-<<<<<<< HEAD
              // $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
              // .then(function(response){
              //      console.log(response);
              //     $scope.optionsTipoCliente =response.data;
              //    // $scope.optionsTipoCliente.push({'tipo_registro': 0, 'descripcion':'Seleccionar...'});
              //    $scope.selectedTipoCliente =  $scope.optionsTipoCliente[0];
-=======
-             $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'Cliente'})
-             .then(function(response){
-                 $scope.optionsTipoCliente =response.data;
-                 $scope.optionsTipoCliente.push({'tipo_registro': 0, 'descripcion':'Seleccionar...'});
-                $scope.selectedTipoCliente =  $scope.optionsTipoCliente[1].tipo_registro;
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
 
              //    console.log( $scope.optionsTipoCliente.length);
                  
@@ -144,7 +124,6 @@ var myApp = angular
              //          }
                       
                     
-<<<<<<< HEAD
              //        }
              //    else{   
              //        for (var i = $scope.optionsTipoCliente.length - 1; i >= 0; i--) {
@@ -158,21 +137,6 @@ var myApp = angular
              // })
 
             $http.post("/./clases/consultaajax.php", {'action':'tipos_registros_obtener_todos_json'})
-=======
-                    }
-                else{   
-                    for (var i = $scope.optionsTipoCliente.length - 1; i >= 0; i--) {
-                          if($scope.optionsTipoCliente[i].tipo_registro == 0)
-                          {
-                            $scope.selectedTipoCliente = $scope.optionsTipoCliente[i].tipo_registro;
-                            break;
-                          }
-                      }
-                }
-             })
-
-            $http.post("/./clases/consultaajax.php", {'action':'tipos_registros', 'renglon' : 'usuario'})
->>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
              .then(function(response){
                  $scope.optionsTipoUsuario =JSON.parse(response.data[0].tipo_persona);
                 $scope.selectedTipoUsuario =  $scope.optionsTipoUsuario[0];
