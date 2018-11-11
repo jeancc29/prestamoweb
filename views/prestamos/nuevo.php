@@ -56,11 +56,11 @@
 <!--                      <input disabled  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="identificacion" name="identificacion" value="{{cliente.identificacion}}">-->
 <!--                    </div>-->
 
-                    <div class="form-group col-10">
+                    <div class="form-group col-9 col-sm-10">
                       <label for="" class="" >Cliente</label>
                       <input disabled ng-model="cliente.nombre"  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Nombre cliente..." name="nombre" autocomplete="off" value="{{cliente.nombre}}">
                     </div>
-                    <div class="form-group  col-2">
+                    <div class="form-group  col-3 col-sm-2">
                       <label for="" class="text-white" >...</label>
                       <button ng-click="datosForumario(1)" type="button" class="btn btn-primary col-12    col-sm-12 form-control ion-ios-person" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
                     </div>
@@ -73,11 +73,11 @@
 <!--                      <input disabled  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="identificacion" name="identificacion_cobrador" value="{{cobrador.identificacion}}">-->
 <!--                    </div>-->
 
-                    <div  class="form-group col-10">
+                    <div  class="form-group col-9 col-sm-10">
                       <label for="" class="" >cobrador</label>
                       <input disabled ng-model="cobrador.nombre"  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Nombre cobrador" name="cobrador" autocomplete="off" value="{{cobrador.nombre}}">
                     </div>
-                    <div class="form-group  col-2">
+                    <div class="form-group  col-3 col-sm-2">
                       <label for="" class="text-white" >...</label>
                       <button ng-click="datosForumario(3)" type="button" class="btn btn-primary col-12    col-sm-12 form-control b-none ion-ios-person" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
                     </div>
@@ -90,11 +90,11 @@
 <!--                      <input disabled  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="identificacion" name="identificacion_garante" value="{{garante.identificacion}}">-->
 <!--                    </div>-->
 
-                    <div  class="form-group col-10">
+                    <div  class="form-group col-9 col-sm-10">
                       <label for="" class="" >Garante</label>
                       <input disabled ng-model="garante.nombre"  type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Nombre garante" name="garante" autocomplete="off" value="{{garante.nombre}}">
                     </div>
-                    <div class="form-group  col-2">
+                    <div class="form-group  col-3 col-sm-2">
                       <label for="" class="text-white" >...</label>
                       <button ng-click="datosForumario(2)" type="button" class="btn btn-primary col-12    col-sm-12 form-control b-none ion-ios-person" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
                     </div>
@@ -262,13 +262,15 @@
             <input type="submit" name="guardar" value="Guardar" class="btn btn-primary btn-block p-2">
           </form> -->
 
-          <div class="container">
+          <div class="ml-2">
             <div class="row">
-              <input class="col-5 form-control" type="text" name="" value="" ng-model="datosBusqueda.datos" placeholder="Buscar por dni o nombre">
-              <input class="col-2 btn btn-primary ml-2" type="submit" name="" value="Buscar" ng-click="buscarPersona()">
+              <input class="col-8 col-sm-5 form-control" type="text" name="" value="" ng-model="datosBusqueda.datos" placeholder="Buscar por dni o nombre">
+              <input class="col-3 col-sm-2 btn btn-primary ml-2" type="submit" name="" value="Buscar" ng-click="buscarPersona()">
 
             </div>
           </div>
+
+
 
           <table class="table table-hover table-bordered min-width-500px mt-4">
             <thead class="thead-dark">
