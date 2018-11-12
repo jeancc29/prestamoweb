@@ -81,18 +81,18 @@
                                     <form method="post" name="prestamos" action="<?php echo ROOT_PATH . 'prestamos/nuevo'; ?>">
 
                                 <div class="row">
-                                    <div class="form-group  col-4">
+                                    <div class="form-group  col-5 col-sm-4">
                                         <label for="" class="" >ID prestamo</label>
-                                        <input disabled string-to-number ng-model="pagosDatos.documento" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Numero pago" name="pago"  >
+                                        <input disabled string-to-number ng-model="pagosDatos.documento" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="ID prestamo" name="pago"  >
                                     
                                     </div>
 
-                                    <div class="form-group  col-1">
+                                    <div class="form-group  col-2 col-sm-1">
                                           <label for="" class="text-white" >...</label>
-                                          <button ng-click="datosForumario(3)" type="button" class="btn btn-primary col-12    col-sm-12 form-control b-none ion-ios-person" data-toggle="modal" data-target=".prestamos-info-modal-lg"></button>
+                                          <button ng-click="datosForumario(3)" type="button" class="btn btn-primary form-control b-none ion-ios-person d-block" data-toggle="modal" data-target=".prestamos-info-modal-lg"></button>
                                         </div>
                                     
-                                    <div class="form-group  col-7">
+                                    <div class="form-group  col-5 col-sm-7">
                                         <label for="" class="" >Cliente</label>
                                         <input ng-model="codigo_usuario" type="hidden" name="codigo_usuario">
                                         <input disabled string-to-number ng-model="pagosDatos.nombre" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Nombre cliente" name="nombre"  >
@@ -100,11 +100,11 @@
                                 </div>
 
                                 <div class="row ">
-                                    <div class="form-group  col-4">
+                                    <div class="form-group col-6  col-sm-4">
                                         <label for="" class="" >Tasa %</label>
                                         <input disabled string-to-number ng-model="pagosDatos.porciento_interes" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Tasa" name="tasa"  >
                                     </div>
-                                    <div class="form-group col-4">
+                                    <div class="form-group d-none d-sm-block col-sm-4">
                                         <label for="" class="" >Forma pago</label>
                                         <select disabled ng-options="o.name for o in optionsFormaPago" ng-model="selectedFormaPago" name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
 
@@ -114,7 +114,7 @@
 <!--                                        <label for="" class="" >Monto a pagar</label>-->
 <!--                                        <input disabled ng-model="monto" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto a pagar" name="monto"  >-->
 <!--                                    </div>-->
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-6 col-sm-4">
                                         <label for="" class="" >Mora</label>
                                         <input disabled ng-model="pagosDatos.mora" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Mora" name="mora"  >
                                     </div>
