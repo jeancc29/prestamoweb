@@ -1,7 +1,7 @@
 <div class="content-wrapper" ng-app="myModulePrestamo">
     <!-- Content Header (Page header) -->
    <div ng-controller="myController">
-       <section class="content-header">
+      <!--  <section class="content-header">
            <h1>
                Dashboard
                <small>Control panel</small>
@@ -10,7 +10,7 @@
                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                <li class="active">Dashboard</li>
            </ol>
-       </section>
+       </section> -->
 
        <!-- Main content -->
        <section class="content">
@@ -20,15 +20,15 @@
            <!-- Main row -->
            <div class="row justify-content-center">
                <!-- Large col -->
-               <section class="col-lg-12" style="min-width: 700px">
+               <section class="col-lg-12" style=" overflow: auto;">
                    <div class="row">
                        <div class="col-12">
                            <div class="box">
                                <div class="box-header">
                                    <h3 class="box-title">Prestamos</h3>
-                                   <a class="btn btn-primary" href="<?php echo ROOT_PATH; ?>prestamos/nuevo">Nuevo prestamo</a>
+                                   <a class="btn btn-primary" href="<?php echo ROOT_PATH; ?>prestamos/nuevo">Nuevo</a>
                                    <div class="box-tools">
-                                       <div class="input-group input-group-sm" style="width: 150px;">
+                                       <div class="input-group input-group-sm col-7 col-sm-10 float-right" style="width: 350px;">
                                            <input ng-model="busqueda" ng-keyup="buscarprestamo()" type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
                                            <div class="input-group-btn">
@@ -39,33 +39,34 @@
                                </div>
                                <!-- /.box-header -->
                                <div class="box-body table-responsive no-padding">
-                                   <table class="table table-hover">
+                                   <table class="table table-hover table-sm">
                                        <tr>
 <!--                                           <th>ID prestamo</th>-->
 <!--                                           <th>Monto</th>-->
 <!--                                           <th>Cuotas</th>-->
 <!--                                           <th>Cliente</th>-->
-                                           <th style="font-size: 15px">ID</th>
-                                           <th style="font-size: 15px">Monto</th>
-                                           <th style="font-size: 15px">Cuotas</th>
-                                           <th style="font-size: 15px">Balance</th>
-                                           <th style="font-size: 15px">Pagado</th>
-                                           <th style="font-size: 15px">Fecha</th>
-                                           <th style="font-size: 15px">Ultimo pago</th>
-                                           <th style="font-size: 15px">Cliente</th>
-                                           <th>Editar</th>
+                                           <th class="d-none d-sm-table-row" style="font-size: 13px">ID</th>
+                                           <th style="font-size: 13px">Monto</th>
+                                           <th class="d-none d-sm-table-row" style="font-size: 13px">Cuotas</th>
+                                           <th style="font-size: 13px">Balance</th>
+                                           <th style="font-size: 13px">Pagado</th>
+                                           <th style="font-size: 13px">Fecha</th>
+                                           <th class="d-none d-sm-table-cell" style="font-size: 13px">Ultimo pago</th>
+                                           <th style="font-size: 13px">Cliente</th>
+                                           <th style="font-size: 13px">Editar</th>
                                        </tr>
                                        <tr class="editar-iconos" ng-repeat="p in prestamos">
 
-                                           <td style="font-size: 13px">{{p.id_registro}}</td>
+                                           <td class="d-none d-sm-table-row" style="font-size: 13px">{{p.id_registro}}</td>
                                            <td style="font-size: 13px">{{p.monto_prestamo | currency}}</td>
-                                           <td style="font-size: 13px">{{p.cantidad_cuotas}}</td>
+                                           <td class="d-none d-sm-table-row" style="font-size: 13px">{{p.cantidad_cuotas}}</td>
                                            <td style="font-size: 13px">{{p.balance_pendiente | currency}}</td>
                                            <td style="font-size: 13px">{{p.monto_pagado | currency}}</td>
                                            <td style="font-size: 13px">{{p.fecha}}</td>
-                                           <td style="font-size: 13px">{{p.fecha_ultimo_pago}}</td>
-                                           <td style="font-size: 13px">{{p.nombre}}</td>
-                                           <td style="font-size: 13px">
+                                           <td class="d-none d-sm-table-cell" style="font-size: 13px">{{p.fecha_ultimo_pago}}</td>
+                                           <td class="d-none d-sm-table-cell" style="font-size: 13px">{{p.nombre}}</td>
+                                           <td  class="d-sm-none" style="font-size: 13px">{{p.nombre | limitTo:15:0}}</td>
+                                           <td style="font-size: 10px">
                                                <a class="ion-edit d-inline bg-primary py-1 px-2 text-white rounded" href="<?php echo ROOT_PATH ?>prestamos/nuevo/{{p.id_registro}}"></a>
                                                <a class="ion-information-circled d-inline bg-primary py-1 px-2 text-white rounded" data-toggle="modal" data-target=".bd-example-modal-lg"  ng-click="verPrestamo(p)"></a>
                                                
