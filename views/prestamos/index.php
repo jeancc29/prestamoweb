@@ -53,7 +53,7 @@
                                            <th style="font-size: 13px">Fecha</th>
                                            <th class="d-none d-sm-table-cell" style="font-size: 13px">Ultimo pago</th>
                                            <th style="font-size: 13px">Cliente</th>
-                                           <th style="font-size: 13px">Editar</th>
+                                           <th style="font-size: 13px">Editar...</th>
                                        </tr>
                                        <tr class="editar-iconos" ng-repeat="p in prestamos">
 
