@@ -197,7 +197,7 @@ var myApp = angular
         $scope.montopagado_keyup = function(){
             var devuelta = 0;
 
-                devuelta = (parseFloat($scope.montopagado) - parseFloat($scope.monto)).toFixed(2);
+                devuelta = (parseFloat($scope.pagosDatos.monto) - parseFloat($scope.pagosDatos.monto_a_pagar)).toFixed(2);
                 if(devuelta > 0)
                     $scope.devuelta = devuelta;
                 else
