@@ -68,7 +68,7 @@
                                            <td  class="d-sm-none" style="font-size: 13px">{{p.nombre | limitTo:15:0}}</td>
                                            <td style="font-size: 10px">
                                                <a class="ion-edit d-inline bg-primary py-1 px-2 text-white rounded" href="<?php echo ROOT_PATH ?>prestamos/nuevo/{{p.id_registro}}"></a>
-                                               <a class="d-none d-sm-table-cell ion-information-circled d-inline bg-primary py-1 px-2 text-white rounded" data-toggle="modal" data-target=".bd-example-modal-lg"  ng-click="verPrestamo(p)"></a>
+                                               <a class="ion-information-circled d-none d-sm-inline bg-primary py-1 px-2 text-white rounded" data-toggle="modal" data-target=".bd-example-modal-lg"  ng-click="verPrestamo(p)"></a>
                                                
                                            </td>
 
