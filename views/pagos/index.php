@@ -191,7 +191,7 @@
                                     <p style="font-size: 13px;" class=" text-primary mr-4" >Total: {{pagosDatos.monto_a_pagar | currency:"RD$"}}</p>
                                 </div>
                                 <div class="col-3 text-right">
-                                    <input ng-click="pagar()" type="button" class="btn btn-primary" value="pagar">
+                                    <input ng-click="pagar()" type="button" class="btn btn-primary mt-2" value="pagar">
                                 </div>
 
 

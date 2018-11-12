@@ -105,12 +105,12 @@
                     class="form-group"
                     ng-class="{'col-6': (selectedTipoPrestamo.descripcion == 'Sam'), 'col-12': (selectedTipoPrestamo.descripcion != 'Sam')}">
                             <label for="" class="" >Monto prestamo</label>
-                            <input ng-model="prestamoDatos.monto_prestamo" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto prestamo" name="monto" autocomplete="off">
+                            <input ng-model="prestamoDatos.monto_prestamo" ng-disabled="prestamoDatos.monto_pagado > 0"  type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Monto prestamo" name="monto" autocomplete="off">
                       </div>
                     
                       <div ng-if="selectedTipoPrestamo.descripcion == 'Sam'" class="form-group  col-6">
                         <label for="" class="" >Valor cuotas</label>
-                        <input ng-model="prestamoDatos.valor_cuotas" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Valor cuota" name="tasa">
+                        <input ng-model="prestamoDatos.valor_cuotas" ng-disabled="prestamoDatos.monto_pagado > 0" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Valor cuota" name="tasa">
                       </div>
                     
                       <!-- <div class="form-group col-6">
@@ -124,12 +124,12 @@
                       
                       <div class="form-group col-6">
                       <label for="" class="" >Cuotas</label>
-                      <input ng-model="prestamoDatos.cantidad_cuotas" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Cuotas" name="cuotas" autocomplete="off">
+                      <input ng-model="prestamoDatos.cantidad_cuotas" ng-disabled="prestamoDatos.monto_pagado > 0" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Cuotas" name="cuotas" autocomplete="off">
                     </div>
 
                       <div class="form-group  col-6">
                         <label for="" class="" >Tasa %</label>
-                        <input ng-model="prestamoDatos.porciento_interes" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Tasa" name="tasa">
+                        <input ng-model="prestamoDatos.porciento_interes" ng-disabled="prestamoDatos.monto_pagado > 0" type="number" class="col-12    col-sm-12 form-control b-none"  placeholder="Tasa" name="tasa">
                       </div>
                         
                         
@@ -139,7 +139,7 @@
                         
                         <div class="form-group col-6">
                             <label for="" class="" >Mora</label>
-                            <input ng-model="prestamoDatos.mora" type="text" class="col-12    col-sm-12 form-control b-none" name="mora" autocomplete="off">
+                            <input ng-model="prestamoDatos.mora" type="number" class="col-12    col-sm-12 form-control b-none" name="mora" autocomplete="off">
                         </div>
 
                          <div class="form-group col-6">
@@ -158,7 +158,7 @@
                                 <option value="3">Amortizacion fija</option>
 
                             </select> -->
-                            <select ng-options="o.name for o in optionsTipoInteres" ng-model="selectedTipoInteres"   name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
+                            <select ng-disabled="prestamoDatos.monto_pagado > 0" ng-options="o.name for o in optionsTipoInteres" ng-model="selectedTipoInteres"   name="tipo_prestamo" class="form-control col-12    col-sm-12 form-control b-none">
 
                             </select>
                         </div>
@@ -173,7 +173,7 @@
                                     <option value="5">Anual</option>
 
                                 </select> -->
-                                <select  ng-options="o.name for o in optionsFormaPago" ng-model="selectedFormaPago"  name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
+                                <select ng-disabled="prestamoDatos.monto_pagado > 0" ng-options="o.name for o in optionsFormaPago" ng-model="selectedFormaPago"  name="forma_pago" class="form-control col-12    col-sm-12 form-control b-none">
 
                                 </select>
                             </div>

@@ -65,7 +65,8 @@ var myApp = angular
             'tipo_interes' : 1,
             'dias_gracia' : null,
             'fecha_pago':null,
-            'codigo_usuario_cobrador':null
+            'codigo_usuario_cobrador':null,
+            'monto_pagado' : 0
         };
 
 
@@ -336,6 +337,7 @@ var myApp = angular
                                             $scope.prestamoDatos.mora= parseFloat(response.data[0].mora);
                                             $scope.prestamoDatos.valor_cuotas= parseFloat(response.data[0].valor_cuotas);
                                             $scope.prestamoDatos.dias_gracia= parseFloat(response.data[0].dias_gracia);
+                                            $scope.prestamoDatos.monto_pagado= parseFloat(response.data[0].monto_pagado);
 
                                             $scope.selectedFormaPago = $scope.optionsFormaPago.find(x => x.id === parseInt(response.data[0].formapago));
                                             $scope.selectedTipoInteres =$scope.optionsTipoInteres.find(x => x.id ===  parseInt(response.data[0].tipo_registro_interes));
