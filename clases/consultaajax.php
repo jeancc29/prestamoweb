@@ -5,8 +5,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 $data=json_decode(file_get_contents("php://input"));
 
-//$serverName = "DESKTOP-B2JEHIP";
 $serverName = "prestamoserver.database.windows.net";
+//$serverName = "DESKTOP-B2JEHIP";
 
 /* Connect using Windows Authentication. */
 
@@ -201,7 +201,7 @@ if(!empty($data) && $data->action == "tipos_registros")
 {
   $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-  $cmd = $conn->prepare("select distinct tipo_registro, * from tipos_registros where renglon = :r");
+  $cmd = $conn->prepare("select * from tipos_registros where renglon = :r");
   $cmd->execute(array(':r'=>$data->renglon));
   $r  =  $cmd->fetchAll();
   echo json_encode($r);
@@ -279,11 +279,21 @@ if(!empty($data) && $data->action == "vw_prestamos_pagos")
   echo json_encode($r);
 }
 
+if(!empty($data) && $data->action == "estadisticas")
+{
+  $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
+  $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+  $cmd = $conn->prepare("exec sp_estadisticas");
+  $cmd->execute();
+  $r  =  $cmd->fetchAll();
+  echo json_encode($r);
+}
+
 if(!empty($data) && $data->action == "prestamos_obtener_todos")
 {
   $conn = new PDO( "sqlsrv:server=$serverName ; Database=prestamoDB", "jeancc29", "Jean06091929");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-  $cmd = $conn->prepare("exec sp_prestamos_obtener_todos");
+  $cmd = $conn->prepare("select * from vw_prestamos");
   $cmd->execute();
   $r  =  $cmd->fetchAll();
   echo json_encode($r);
