@@ -1,7 +1,7 @@
 /*!
  *   AdminLTE v2.4.2
  *   Author: Almsaeed Studio
- *	 Website: Almsaeed Studio <https://adminlte.io>
+ *   Website: Almsaeed Studio <https://adminlte.io>
  *   License: Open source - MIT
  *           Please visit http://opensource.org/licenses/MIT for more information
  */
@@ -2170,9 +2170,9 @@ a:focus {
   display: block;
   float: left;
   height: 90px;
-  width: 90px;
+  width: 50px;
   text-align: center;
-  font-size: 45px;
+  font-size: 35px;
   line-height: 90px;
   background: rgba(0, 0, 0, 0.2);
 }
@@ -2181,7 +2181,7 @@ a:focus {
 }
 .info-box-content {
   padding: 5px 10px;
-  margin-left: 90px;
+  margin-left: 50px;
 }
 .info-box-number {
   display: block;

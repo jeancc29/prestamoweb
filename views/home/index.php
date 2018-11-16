@@ -78,7 +78,7 @@
                 <span class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Messages</span>
+                  <span class="info-box-text">Total prestado</span>
                   <span class="info-box-number">{{datos.total_prestado | currency}}</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -87,11 +87,9 @@
             </div>
             <div class="col-sm-6 col-lg-3">
               <div class="info-box">
-                <span style="width: 25%;" class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
-
+                <span class="info-box-icon bg-success"><i class="fa fa-usd"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Capital</span>
-                  <span class="info-box-text">cobrado</span>
+                  <span class="info-box-text">Capital cobrado</span>
                   <span class="info-box-number">{{datos.capital_cobrado | currency}}</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -112,7 +110,7 @@
             </div>
              <div class="col-sm-6 col-lg-3">
               <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
+                <span class="info-box-icon bg-success"><i class="fa fa-usd"></i></span>
 
                 <div class="info-box-content">
                   <span class="info-box-text">Mora cobrado</span>
