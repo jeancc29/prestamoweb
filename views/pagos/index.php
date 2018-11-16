@@ -31,7 +31,7 @@
                                     <div class="col-12">
                                         <div class="d-inline-block  justify-content-center">
                                     <div class="custom-control custom-checkbox">
-                                        <input ng-model="perdonar_mora" ng-click="cuotasChange()" ng-change=""  type="checkbox" class="custom-control-input" id="customCheckPerdonarMora">
+                                        <input ng-model="pagosDatos.mora_perdonada" ng-change="ckbMoraPerdonadaChanged()"  type="checkbox" class="custom-control-input" id="customCheckPerdonarMora">
                                         <label  class="custom-control-label" for="customCheckPerdonarMora">Perdonar mora</label>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
 <!--                                    </div>-->
                                     <div class="form-group col-6 col-sm-4">
                                         <label for="" class="" >Mora</label>
-                                        <input disabled ng-model="pagosDatos.mora" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Mora" name="mora"  >
+                                        <input disabled ng-model="pagosDatos.mora_a_pagar" type="text" class="col-12    col-sm-12 form-control b-none"  placeholder="Mora" name="mora"  >
                                     </div>
 
                                 </div>
@@ -567,7 +567,7 @@
                 </div>
             </div>
 
-            <div class="modal fade prestamos-info-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div id="myModal" class="modal fade prestamos-info-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -605,7 +605,7 @@
                                             <td style="font-size: 13px">{{p.id_registro}}</td>
                                             <td style="font-size: 13px">{{p.monto_prestamo | currency}}</td>
                                             <!-- <td style="font-size: 13px">{{p.cantidad_cuotas}}</td> -->
-                                            <td style="font-size: 13px">{{p.nombre}}</td>
+                                            <td style="font-size: 13px">{{p.nombre_cliente}}</td>
                                            <!--  <td style="font-size: 13px">{{p.fecha_ultimo_pago}}</td> -->
                                             <!-- <td style="font-size: 13px">{{p.monto_pagado | currency}}</td> -->
                                             <td>

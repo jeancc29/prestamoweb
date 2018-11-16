@@ -1,7 +1,7 @@
 <div class="content-wrapper" ng-app="myModulePersonas">
     <!-- Content Header (Page header) -->
     <div ng-controller="myController">
-        <!-- <section class="content-header">
+        <section class="content-header">
             <h1>
                 Dashboard
                 <small>Control panel</small>
@@ -11,7 +11,7 @@
                 <li class="active">Dashboard</li>
             </ol>
         </section>
- -->
+
         <!-- Main content -->
         <section class="content">
             <!-- Small boxes (Stat box) -->

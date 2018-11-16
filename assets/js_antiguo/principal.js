@@ -1,11 +1,9 @@
 var myApp = angular
-    .module("myModuleHomeClientes", [])
+    .module("myModulePrincipal", [])
     .controller("myController", function($scope,$http, $log){
 
-        $scope.ventana = 1;
 
-        $scope.codigo_usuario = 0;
-        $scope.textoBusqueda = "";
+        $scope.busqueda = "";
         $scope.cliente = "";
         $scope.garante = "";
         $scope.titulo = "";
@@ -19,7 +17,6 @@ var myApp = angular
         $scope.formapago = 0;
         $scope.tipoprestamo = 0;
         $scope.fechaapertura = new Date();
-        $scope.prestamos = [];
         var d = [];
 
         $scope.optionsFormaPago = [{name:"Diario", id:1}, {name:"Semanal", id:2}, {name:"Quincenal", id:3}, {name:"Mensual", id:4}, {name:"Anual", id:5}];
@@ -30,7 +27,10 @@ var myApp = angular
 
 
         $scope.buscarcliente=function(){
+
+         
             $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'clientes'})
+
                 .then(function(data){
                     $scope.data=data;
                     console.log($scope.data);
@@ -97,7 +97,11 @@ var myApp = angular
             console.log( "tipoprestamo: ",$scope.selectedTipoPrestamo.id);
             // console.log( "formapago: ",$scope.selectedFormaPago.id);
 
+<<<<<<< HEAD
+            $http.post("/prestamoGitHub/clases/consultaajax.php",
+=======
             $http.post("/./clases/consultaajax.php",
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
                 {'tasa':$scope.tasa,
                     'cuotas':$scope.cuotas,
                     'interes':$scope.interes,
@@ -114,7 +118,6 @@ var myApp = angular
 
 
         $scope.verPrestamo = function(data){
-            console.log(data.interes_pendiente);
             $scope.tasa = data.porciento_interes;
             $scope.cuotas = data.cantidad_cuotas;
             $scope.monto = data.monto_prestamo;
@@ -126,66 +129,63 @@ var myApp = angular
             $scope.detalle = data.detalle;
             $scope.selectedFormaPago = $scope.optionsFormaPago[data.formapago - 1];
             $scope.selectedTipoPrestamo= $scope.optionsTipoPrestamo[data.tipo_registro_tipoprestamo - 1];
+            // console.log(data.porciento_interes);
+            // $scope.tasa = data.porciento_interes;
+            // $scope.cuotas = data.cantidad_cuotas;
+            // $scope.monto = data.monto_prestamo;
+            // $scope.detalle = data.detalle;
+            // $scope.selectedFormaPago = $scope.optionsFormaPago[data.formapago - 1];
+            // $scope.selectedTipoPrestamo= $scope.optionsTipoPrestamo[data.tipo_registro_tipoprestamo - 1];
+            //
+            // console.log( "interes: ",$scope.interes);
+            // console.log( "cuotas: ",$scope.cuotas);
+            // console.log( "monto: ",$scope.monto);
+            // console.log( "tipoprestamo: ",$scope.tipoprestamo);
+            // console.log( "formapago: ",$scope.formapago);
 
-
+<<<<<<< HEAD
+            // $http.post("/prestamoGitHub/clases/consultaajax.php",
+=======
+            // $http.post("/./clases/consultaajax.php",
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
+            //                                 {'tasa':$scope.tasa,
+            //                                     'cuotas':$scope.cuotas,
+            //                                     'interes':$scope.interes,
+            //                                     'monto':$scope.monto,
+            //                                     'tipoprestamo':$scope.tipoprestamo,
+            //                                     'formapago':$scope.formapago,
+            //                                     'action':'amortizar'})
+            //     .then(function(data){
+            //         $scope.data=data;
+            //         console.log($scope.data);
+            //     })
         }
 
 
-
-
-
-        $scope.prestamosMostrar = function(codigo_usuario){
-            $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'prestamos_codigo_usuario'})
-                .then(function(response){
-                    $scope.prestamosTodos=response.data;
-                    console.log($scope.prestamosTodos);
-                })
-        }
-
-    $scope.pagosMostrar = function(codigo_usuario){
-            $http.post("/./clases/consultaajax.php", {'codigo_usuario': codigo_usuario,'action':'pagos_codigo_usuario'})
-                .then(function(response){
-                    $scope.pagosTodos=response.data;
-                    console.log($scope.pagosTodos);
-                })
-        }
-
-
-        $scope.buscarprestamo=function(datos){
-            console.log(datos.target.value);
-            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'prestamos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
-                .then(function(response){
-                    $scope.prestamosTodos=response.data;
-                })
-
-        }
-
- $scope.buscarpago=function(datos){
-            console.log(datos.target.value);
-            $http.post("/./clases/consultaajax.php",{'datos':datos.target.value, 'action':'pagos_buscar_para_cliente', 'codigo_cliente':$scope.codigo_usuario})
-                .then(function(response){
-                    $scope.pagosTodos=response.data;
-                })
-
-        }
-
-
-        $scope.ventanaCambiar = function(valor){
-            $scope.ventana = valor;
-        }
-
-    $scope.clienteDatosResumen = function(codigo_usuario){
-        $http.post("/./clases/consultaajax.php",{ 'action':'clientes_datos_resumen', 'codigo_cliente':$scope.codigo_usuario})
+<<<<<<< HEAD
+        $scope.prestamos = $http.post("/prestamoGitHub/clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+=======
+        $scope.prestamos = $http.post("/./clases/consultaajax.php", {'action':'prestamos_obtener_todos'})
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
             .then(function(response){
-                $scope.datosResumen=response.data;
-                console.log($scope.datosResumen);
+                $scope.prestamos=response.data;
+                console.log(Date());
+                console.log($scope.fechaapertura);
             })
 
-        console.log(codigo_usuario);
+
+        $scope.buscarprestamo=function(){
+<<<<<<< HEAD
+            $http.post("/prestamoGitHub/clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+=======
+            $http.post("/./clases/consultaajax.php",{'datos':$scope.busqueda, 'action':'prestamos_buscar'})
+>>>>>>> 75af20c6caca26357ecb844a7ea5f0dc8553b422
+                .then(function(response){
+                    $scope.prestamos=response.data;
+                    console.log($scope.data);
+                })
 
         }
-
-
 
 
     })

@@ -142,7 +142,6 @@ var myApp = angular
                     var data = [];
                              $scope.pagos_consulta = response.data;
                              console.log('pagos consulta: ', $scope.pagos_consulta);
-                              $('#myModal').modal('hide');
                 })
 
 
@@ -152,7 +151,7 @@ var myApp = angular
             //$scope.pagosDatos.amortizacion.push(cuota);
             console.log($scope.pagosDatos.amortizacion);
             if(ckbSeleccionarCuota){
-                console.log($scope.pagosDatos);
+                console.log(Object.keys($scope.pagosDatos.amortizacion).lenght);
                 if(Object.keys($scope.pagosDatos.amortizacion).length > 0){
                     console.log($scope.pagosDatos.amortizacion.find(x => x.idAmortizacion == parseInt(cuota.idAmortizacion)));
                     if($scope.pagosDatos.amortizacion.find(x => x.idAmortizacion == parseInt(cuota.idAmortizacion)) != undefined)
@@ -178,21 +177,18 @@ var myApp = angular
         }
 
         $scope.calcularTotal = function(){
-            var monto_a_pagar = 0, capital_a_pagar = 0, interes_a_pagar = 0, mora_a_pagar = 0;
+            var monto_a_pagar = 0, capital_a_pagar = 0, interes_a_pagar = 0;
              $scope.pagosDatos.amortizacion.forEach(function(valor, indice, array){
                 console.log('Valor:', array[indice].capital, 'indice: ', indice);
                 monto_a_pagar +=  parseFloat(array[indice].cuota);
                 capital_a_pagar += parseFloat(array[indice].capital);
                 interes_a_pagar += parseFloat(array[indice].interes);
-                mora_a_pagar += ($scope.pagosDatos.mora_perdonada) ? 0 : parseFloat(array[indice].mora);
-             });
 
+             });
 
              $scope.pagosDatos.capital_a_pagar = capital_a_pagar;
              $scope.pagosDatos.interes_a_pagar = interes_a_pagar;
-             $scope.pagosDatos.monto_a_pagar = monto_a_pagar + mora_a_pagar;
-             $scope.pagosDatos.mora_a_pagar = mora_a_pagar;
-             console.log('calcularTotal mora: ',mora_a_pagar);
+             $scope.pagosDatos.monto_a_pagar = monto_a_pagar;
         }
 
         
@@ -218,13 +214,11 @@ var myApp = angular
 
         $scope.pagar = function(){
             
-            $scope.pagosDatos.mora_perdonada = ($scope.pagosDatos.mora_perdonada) ? 1 : 0;
-          
+
 
             $http.post("/./clases/consultaajax.php", {'action':'sp_pagos_guardar', 'datos' : $scope.pagosDatos})
                 .then(function(response){
                     var data = [];
-                            alert(response.data[0].mensaje);
                             $scope.pagosDatos.amortizacion = [];
                              $scope.calcularTotal();
                              $scope.pagosDatos.monto = 0;
@@ -323,9 +317,27 @@ var myApp = angular
                     }
 
 
-               $scope.ckbMoraPerdonadaChanged = function(){
-                $scope.calcularTotal();
-               }     
+        // function calcular_diferencia_dias_entre_fechas(fechaini){
+        //     //alert("funcion diferencia de dias, fechaini: ", fechaini);
+        //      fechaini = new Date('2018-03-01');
+        //      var fechafin = new Date();
+        //     var diasdif= fechafin.getTime()-fechaini.getTime();
+        //     var contdias = Math.round(diasdif/(1000*60*60*24));
+        //     console.log(contdias);
+        // }
 
+
+        // $scope.calcular_mora= function(fechaini, mora_porcentaje){
+        //     var diasdif = $scope.calcular_diferencia_dias_entre_fechas(fechaini);
+        //     if(diasdif > 0){
+        //
+        //     }
+        // }
+        //
+        // $scope.calcular_diferencia_dias_entre_fechas = function(fechaini){
+        //     fechaini = moment('2018-03-01');
+        //     fechafin = moment(new Date());
+        //     console.log(fechafin.diff(fechaini, 'days'), 'dias de diferencia')
+        // }
 
     })

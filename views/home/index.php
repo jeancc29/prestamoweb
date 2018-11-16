@@ -3,7 +3,7 @@
 
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" ng-app="myModuleHome">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -17,7 +17,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" ng-controller="myController" ng-init="load()">
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-3 col-xs-6">
@@ -69,8 +69,62 @@
         </div>
         <!-- /.row -->
         <!-- Main row -->
+        <!-- Content Header (Page header) -->
+    
 
-        <!-- /.row (main row) -->
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Messages</span>
+                  <span class="info-box-number">{{datos.total_prestado | currency}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="info-box">
+                <span style="width: 25%;" class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Capital</span>
+                  <span class="info-box-text">cobrado</span>
+                  <span class="info-box-number">{{datos.capital_cobrado | currency}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Interes cobrado</span>
+                  <span class="info-box-number">{{datos.interes_cobrado | currency}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+             <div class="col-sm-6 col-lg-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-usd"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Mora cobrado</span>
+                  <span class="info-box-number">{{datos.mora_cobrada | currency}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+        </div>
+            
+        
 
     </section>
     <!-- /.content -->

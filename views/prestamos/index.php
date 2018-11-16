@@ -45,9 +45,9 @@
 <!--                                           <th>Monto</th>-->
 <!--                                           <th>Cuotas</th>-->
 <!--                                           <th>Cliente</th>-->
-                                           <th class="d-none d-sm-table-row" style="font-size: 13px">ID</th>
+                                           <th class="d-none d-sm-table-cell" style="font-size: 13px">ID</th>
                                            <th style="font-size: 13px">Monto</th>
-                                           <th class="d-none d-sm-table-row" style="font-size: 13px">Cuotas</th>
+                                           <th class="d-none d-sm-table-cell" style="font-size: 13px">Cuotas</th>
                                            <th style="font-size: 13px">Balance</th>
                                            <th style="font-size: 13px">Pagado</th>
                                            <th style="font-size: 13px">Fecha</th>
@@ -57,9 +57,9 @@
                                        </tr>
                                        <tr class="editar-iconos" ng-repeat="p in prestamos">
 
-                                           <td class="d-none d-sm-table-row" style="font-size: 13px">{{p.id_registro}}</td>
+                                           <td class="d-none d-sm-table-cell" style="font-size: 13px">{{p.id_registro}}</td>
                                            <td style="font-size: 13px">{{p.monto_prestamo | currency}}</td>
-                                           <td class="d-none d-sm-table-row" style="font-size: 13px">{{p.cantidad_cuotas}}</td>
+                                           <td class="d-none d-sm-table-cell" style="font-size: 13px">{{p.cantidad_cuotas}}</td>
                                            <td style="font-size: 13px">{{p.balance_pendiente | currency}}</td>
                                            <td style="font-size: 13px">{{p.monto_pagado | currency}}</td>
                                            <td style="font-size: 13px">{{p.fecha}}</td>

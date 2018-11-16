@@ -27,6 +27,9 @@ if($_GET['controller'] != "login")
     <?php if($_GET['controller'] == "prestamos"):?>
         <script src="<?php echo ROOT_PATH ?>assets/js/prestamo.js" ></script>
     <?php endif; ?>
+    <?php if($_GET['controller'] == "home" || $_GET['controller'] == ""):?>
+        <script src="<?php echo ROOT_PATH ?>assets/js/home.js" ></script>
+    <?php endif; ?>
     <?php if($_GET['controller'] == "pagos"):?>
         <script src="<?php echo ROOT_PATH ?>assets/js/pagos.js" ></script>
     <?php endif; ?>
