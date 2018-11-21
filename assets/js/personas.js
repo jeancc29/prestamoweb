@@ -198,6 +198,7 @@ var myApp = angular
                         if(response.data[0].errores == 0)
                             {
                               alert(response.data[0].mensaje);
+                              $scope.inicializarComponentes();
                             }
                     })
         }
@@ -219,5 +220,22 @@ var myApp = angular
                       }
 
             if(encontrado) $scope.es_cliente = true;
+        }
+
+
+        $scope.inicializarComponentes = function(){
+            $scope.persona = {
+                'codigo_usuario':null,
+                'nombre':null,
+                'sexo':null,
+                'identificacion':null,
+                'telefono':null,
+                'direccion':null,
+                'fecha_nacimiento':null,
+                'correo':null,
+                'idSector':null,
+                'tipo_usuario':null,
+                'tipo_cliente':null
+              };
         }
     })
